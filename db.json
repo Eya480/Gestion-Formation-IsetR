@@ -1,0 +1,125 @@
+{
+    "candidats": [
+      {
+        "id": 1,
+        "nom": "Khawla",
+        "prenom": "Zribi",
+        "email": "zribikh@email.com",
+        "photo": "https://picsum.photos/400/?random",
+        "motDePasse": "password123"
+      },
+      {
+        "id": 2,
+        "nom": "Hedi",
+        "prenom": "Joui",
+        "email": "jouihz@email.com",
+        "photo": "https://picsum.photos/400/?random",
+        "motDePasse": "password321"
+      },
+      {
+        "id": 3,
+        "nom": "Amina",
+        "prenom": "Ben Salem",
+        "email": "aminabensalem@email.com",
+        "photo": "https://picsum.photos/400/?random",
+        "motDePasse": "securepass456"
+      },
+      {
+        "id": 4,
+        "nom": "Sami",
+        "prenom": "Toumi",
+        "email": "samitoumi@email.com",
+        "photo": "https://picsum.photos/400/?random",
+        "motDePasse": "pass789"
+      }
+    ],
+    
+    "formateurs": [
+      {
+        "id": 1,
+        "nom": "Martin",
+        "prenom": "Pierre",
+        "email": "pierre.martin@example.com",
+        "telephone": "1234567890",
+        "specialites": ["Développement Web", "JavaScript"]
+      },
+      {
+        "id": 2,
+        "nom": "Dubois",
+        "prenom": "Lucie",
+        "email": "lucie.dubois@example.com",
+        "telephone": "9876543210",
+        "specialites": ["Angular", "React"]
+      },
+      {
+        "id": 3,
+        "nom": "Ben Ali",
+        "prenom": "Mehdi",
+        "email": "mehdi.benali@example.com",
+        "telephone": "5555555555",
+        "specialites": ["Python", "Django"]
+      }
+    ],
+    "formations": [
+      {
+        "id": 1,
+        "titre": "Formation Angular",
+        "description": "Apprendre Angular pour le développement web",
+        "chargeHoraire": 30,
+        "niveau": "Intermédiaire",
+        "programme": "path/to/programme-angular.pdf",
+        "tags": ["Angular", "Développement Web"],
+        "categories": ["web", "mobile", "desktop"]
+      },
+      {
+        "id": 2,
+        "titre": "Introduction à Python",
+        "description": "Les bases de la programmation avec Python",
+        "chargeHoraire": 20,
+        "niveau": "Débutant",
+        "programme": "path/to/programme-python.pdf",
+        "tags": ["Python", "Programmation"],
+        "categories": ["backend", "data science"]
+      },
+      {
+        "id": 3,
+        "titre": "React Avancé",
+        "description": "Approfondir vos compétences en React",
+        "chargeHoraire": 25,
+        "niveau": "Avancé",
+        "programme": "path/to/programme-react.pdf",
+        "tags": ["React", "Développement Frontend"],
+        "categories": ["web"]
+      }
+    ],
+    "sessions": [
+      {
+        "id": 1,
+        "formationId": 1,
+        "formateurIds": [1, 2],
+        "dateDebut": "2024-01-10T09:00:00",
+        "dateFin": "2024-01-10T16:00:00",
+        "description": "Session de formation sur Angular",
+        "candidatsInscrits": [1, 2]
+      },
+      {
+        "id": 2,
+        "formationId": 2,
+        "formateurIds": [3],
+        "dateDebut": "2024-01-15T10:00:00",
+        "dateFin": "2024-01-15T17:00:00",
+        "description": "Session introductive sur Python",
+        "candidatsInscrits": [3]
+      },
+      {
+        "id": 3,
+        "formationId": 3,
+        "formateurIds": [2],
+        "dateDebut": "2024-02-01T09:30:00",
+        "dateFin": "2024-02-01T16:30:00",
+        "description": "Session avancée sur React",
+        "candidatsInscrits": [4]
+      }
+    ]
+  }
+  
