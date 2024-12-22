@@ -1,35 +1,36 @@
 <form [formGroup]="trainingsForm">
-    <div class="container-fluid dashboard text-center">
-      <div class="row">
-        <h1>Trainings</h1>
-  
-        <input
-          formControlName="searchInput"
-          class="form-control me-sm-2"
-          type="search"
-          placeholder="Search"
-        />
-      </div>
+    <div class="container-fluid dashboard">
+        <div class="row">
+          <h1 class="mb-4 text-center">Trainings</h1>
+          <div class="col-12 d-flex justify-content-center mb-4">
+            <input
+              formControlName="searchInput"
+              class="form-control w-50"
+              type="search"
+              placeholder="Search for Trainings"
+            />
+          </div>
+        </div>
       <div class="row">
         @if(trainingsArr().length >0){ @for(training of trainingsArr(); track
         training){
-        <div class="col-md-4 gy-3">
-          <div class="card h-100">
-            <div class="card-header text-center">
+        <div class="col-12 col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-success text-white">
               {{ training.titre }}
             </div>
-            <div
-              class="card-body d-flex justify-content-center align-items-center"
-            >
-              <h5 class="card-title text-center">
-                Description: {{ training.description }}<br />
-                Level: {{ training.niveau }}
-              </h5>
-            </div>
+            <div class="card-body">
+                <p><strong>Description:</strong> {{ training.description }}</p>
+                <p><strong>Level:</strong> {{ training.niveau }}</p>
+                <strong>Charge Horaire:</strong> {{ training.chargeHoraire }} hours
+              </div>
           </div>
         </div>
         } } @else{
-        <p>No Search Found!!</p>
+            <div class="alert alert-dismissible alert-danger ">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong>No Search Found!!</strong>
+              </div>
         }
       </div>
     </div>
