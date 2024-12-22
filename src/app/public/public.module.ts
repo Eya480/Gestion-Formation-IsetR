@@ -16,7 +16,7 @@ import { FooterComponent } from './footer/footer.component';
     NavComponent,
     LoginComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
     
   ]
 })
