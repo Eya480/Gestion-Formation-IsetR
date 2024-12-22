@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">Détails de la formation : {{training?.titre}}</h1>
+        <!-- Description de la formation -->
+        <p class="lead">{{training?.description}}</p>
+
+        <!-- Charge horaire -->
+        <p><strong>Charge horaire:</strong> {{training?.chargeHoraire}} hours</p>
+
+        <!-- Liste des sessions à venir -->
+        <h3>Sessions à venir</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Les formateurs</th>
+              <th>Date de début</th>
+              <th>Date de fin</th>
+            </tr>
+          </thead>
+          <tbody>
+          </table>
+
+          <!-- Button to view the training program -->
+          <a href="{{training?.programme}}" class="btn btn-primary mt-3" target="_blank">View Training Program PDF</a>
+          
+        </div>
+      </div>
+    </div>

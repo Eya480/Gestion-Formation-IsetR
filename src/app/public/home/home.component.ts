@@ -13,6 +13,10 @@ import { CategoriesComponent } from './categories/categories.component';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
+  titre: string =
+      'Bienvenue sur notre plateforme de gestion des sessions de formation';
+    description: string =
+      'Découvrez nos catégories et formations pour développer vos compétences';
   ngOnInit(){}
  
 }

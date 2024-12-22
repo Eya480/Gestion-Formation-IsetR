@@ -1,20 +1,15 @@
-<div class="container my-5">
-    <!-- Titre et description -->
-     <div style="height:500px">
-    <h1 class="text-center text-primary">{{ titre }}</h1>
-    <p class="text-center mt-3">{{ description }}</p>
-  </div>
     <!-- Section des catégories -->
-    <div class="row mt-5">
-      <div class="col-12">
-        <h2 class="text-secondary">Nos Catégories :</h2>
-      </div>
-  
-      @for(categorie of categories; track categorie){
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
+    <div class="container my-5">
+      <h2 class="text-center mb-4">Nos Catégories de Formations</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        @for(categorie of categories; track categorie){
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Formation 1">
             <div class="card-body">
               <h5 class="card-title">{{ categorie }}</h5>
+            </div>
+            <div class="card-footer text-center">
               <a [routerLink]="['/formations']" class="btn btn-primary"
                 >Voir les formations</a
               >
@@ -22,10 +17,17 @@
           </div>
         </div>
       }
-     
-    </div>
+      </div>
   
     <!-- Section des formations -->
+     <!-- Section Programme de formation -->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Notre Programme</h2>
+        <p>Notre programme de formation couvre divers domaines, allant du développement informatique à la gestion de projet. Chaque formation est conçue pour répondre aux besoins des professionnels et des débutants, avec une approche pratique et des experts dans chaque domaine.</p>
+      </div>
+  </div>
     <div class="row mt-5">
       <div class="col-12">
         <h2 class="text-secondary">Nos Formations :</h2>
@@ -38,7 +40,7 @@
             <h5 class="card-title">{{ formation.titre }}</h5>
             <p class="card-text">{{ formation.description }}</p>
             <a
-              [routerLink]="['/formations', formation.id]"
+              [routerLink]="['../','trainingDetails', formation.id]" 
               class="btn btn-primary"
               >Voir les détails</a
             >
@@ -48,4 +50,5 @@
       }
     </div>
   </div>
+  
   

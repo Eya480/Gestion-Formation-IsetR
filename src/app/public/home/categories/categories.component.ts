@@ -11,10 +11,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './categories.component.css',
 })
 export class CategoriesComponent implements OnInit {
-  titre: string =
-    'Bienvenue sur notre plateforme de gestion des sessions de formation';
-  description: string =
-    'Découvrez nos catégories et formations pour développer vos compétences';
   formations: any[] = [];
   categories: Set<string> = new Set();
   constructor(private dataService: DataService) {}

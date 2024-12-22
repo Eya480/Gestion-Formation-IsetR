@@ -15,4 +15,9 @@ export class TrainingsService {
   getFormations(): Observable<Trainings[]> {
     return this.http.get<Trainings[]>(`${this.baseUrl}/formations`);
   }
+  getFormationById(id: string): Observable<Trainings> {
+    return this.http.get<Trainings>(`${this.baseUrl}/formations/${id}`);
+  }
+  
+  
 }
