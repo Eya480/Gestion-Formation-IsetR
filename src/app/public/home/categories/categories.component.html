@@ -1,21 +1,28 @@
 <div class="container my-5">
     <!-- Titre et description -->
+     <div style="height:500px">
     <h1 class="text-center text-primary">{{ titre }}</h1>
     <p class="text-center mt-3">{{ description }}</p>
-  
+  </div>
     <!-- Section des catégories -->
     <div class="row mt-5">
       <div class="col-12">
         <h2 class="text-secondary">Nos Catégories :</h2>
       </div>
-      <div class="col-md-4" *ngFor="let categorie of categories">
-        <div class="card mb-4 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">{{ categorie }}</h5>
-            <a [routerLink]="['/formations']" class="btn btn-primary">Voir les formations</a>
+  
+      @for(categorie of categories; track categorie){
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">{{ categorie }}</h5>
+              <a [routerLink]="['/formations']" class="btn btn-primary"
+                >Voir les formations</a
+              >
+            </div>
           </div>
         </div>
-      </div>
+      }
+     
     </div>
   
     <!-- Section des formations -->
@@ -23,15 +30,22 @@
       <div class="col-12">
         <h2 class="text-secondary">Nos Formations :</h2>
       </div>
-      <div class="col-md-4" *ngFor="let formation of formations">
+  
+      @for(formation of formations; track formation){
+      <div class="col-md-4">
         <div class="card mb-4 shadow-sm">
           <div class="card-body">
             <h5 class="card-title">{{ formation.titre }}</h5>
             <p class="card-text">{{ formation.description }}</p>
-            <a [routerLink]="['/formations', formation.id]" class="btn btn-primary">Voir les détails</a>
+            <a
+              [routerLink]="['/formations', formation.id]"
+              class="btn btn-primary"
+              >Voir les détails</a
+            >
           </div>
         </div>
       </div>
+      }
     </div>
   </div>
   

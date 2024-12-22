@@ -1,0 +1,37 @@
+<form [formGroup]="trainingsForm">
+    <div class="container-fluid dashboard text-center">
+      <div class="row">
+        <h1>Trainings</h1>
+  
+        <input
+          formControlName="searchInput"
+          class="form-control me-sm-2"
+          type="search"
+          placeholder="Search"
+        />
+      </div>
+      <div class="row">
+        @if(trainingsArr().length >0){ @for(training of trainingsArr(); track
+        training){
+        <div class="col-md-4 gy-3">
+          <div class="card h-100">
+            <div class="card-header text-center">
+              {{ training.titre }}
+            </div>
+            <div
+              class="card-body d-flex justify-content-center align-items-center"
+            >
+              <h5 class="card-title text-center">
+                Description: {{ training.description }}<br />
+                Level: {{ training.niveau }}
+              </h5>
+            </div>
+          </div>
+        </div>
+        } } @else{
+        <p>No Search Found!!</p>
+        }
+      </div>
+    </div>
+  </form>
+  
