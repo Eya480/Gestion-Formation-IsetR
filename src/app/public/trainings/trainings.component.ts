@@ -2,18 +2,18 @@ import {
   Component,
   OnInit,
   signal,
-  Signal,
   WritableSignal,
 } from '@angular/core';
 import { TrainingsService } from '../services/trainings/trainings.service';
 import { Trainings } from '../models/trainings';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { map, of, startWith } from 'rxjs';
+import { RouterModule } from '@angular/router'; // Import RouterModule
 
 @Component({
   selector: 'app-trainings',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,RouterModule],
   templateUrl: './trainings.component.html',
   styleUrl: './trainings.component.css',
 })

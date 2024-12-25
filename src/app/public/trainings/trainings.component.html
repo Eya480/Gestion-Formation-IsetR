@@ -15,20 +15,19 @@
         />
       </div>
     </div>
-      <div class="row">
-        @if(trainingsArr().length >0){ @for(training of trainingsArr(); track
-        training){
-        <div class="col-12 col-md-6 mb-4">
-          <div class="card shadow-sm">
-            <div class="card-header bg-success text-white">
-              {{ training.titre }}
-            </div>
-            <div class="card-body">
-                <p><strong>Description:</strong> {{ training.description }}</p>
-                <p><strong>Level:</strong> {{ training.niveau }}</p>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3"> <!-- Adjusted for 3 cards per row -->
+      @if(trainingsArr().length > 0) {
+        @for(training of trainingsArr(); track training) {
+          <div class="card shadow-sm border-primary mb-4 small-card">
+            <!-- Background Image inside the Card -->
+            <div class="card-body text-center">
+              <h5 class="card-title text-primary fw-bold">
+                {{ training.titre }}
+              </h5>
+              <p><strong>{{ training.description }}</strong> </p>
+              <a [routerLink]="['../','trainingDetails', training.id]" class="btn btn-outline-primary btn-sm">Voir les détails</a>
               </div>
           </div>
-        </div>
         } } @else{
             <div class="alert alert-dismissible alert-danger ">
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -38,4 +37,5 @@
       </div>
     </div>
   </form>
+  
   

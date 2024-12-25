@@ -1,29 +1,52 @@
 <div class="container mt-5">
-    <div class="card">
-      <div class="card-body">
-        <h1 class="card-title">Détails de la formation : {{training?.titre}}</h1>
-        <!-- Description de la formation -->
-        <p class="lead">{{training?.description}}</p>
+  <div class="card">
+    <div class="card-body">
+      <h1 class="card-title">Détails de la formation : {{ training?.titre }}</h1>
+      
+      <!-- Description de la formation -->
+      <p class="lead">{{ training?.description }}</p>
 
-        <!-- Charge horaire -->
-        <p><strong>Charge horaire:</strong> {{training?.chargeHoraire}} hours</p>
+      <!-- Charge horaire -->
+      <p><strong>Charge horaire:</strong> {{ training?.chargeHoraire }} heures</p>
 
-        <!-- Liste des sessions à venir -->
-        <h3>Sessions à venir</h3>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Les formateurs</th>
-              <th>Date de début</th>
-              <th>Date de fin</th>
-            </tr>
-          </thead>
-          <tbody>
-          </table>
+      <!-- Liste des sessions à venir -->
+      <h3 class="mt-4">Sessions à venir</h3>
 
-          <!-- Button to view the training program -->
-          <a href="{{training?.programme}}" class="btn btn-primary mt-3" target="_blank">View Training Program PDF</a>
-          
+      @for(session of sessions; track session;) {
+        <div class="card mt-3">
+          <div class="card-body">
+            <p class="card-text mb-3"><strong>{{ session.description }}</strong></p> <!-- Mise en valeur de la description -->
+            
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Les formateurs</th>
+                  <th>Date de début</th>
+                  <th>Date de fin</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <!-- Afficher les formateurs pour chaque session -->
+                    @for(trainers of session.formateurs; track trainers) {
+                      @for(trainer of trainers ; track trainer){
+                        <div  class="text-danger">
+                          {{ trainer.prenom }} {{ trainer.nom }} - ({{ trainer.specialites }})
+                        </div>
+                      }}
+                    </td>
+                    <td>{{ session.dateDebut }}</td>
+                    <td>{{ session.dateFin }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
         </div>
-      </div>
+      }
+
+      <!-- Button to view the training program -->
+      <a href="{{ training?.programme }}" class="btn btn-primary mt-3" target="_blank">Voir le programme de la formation</a>
     </div>
+  </div>
+</div>

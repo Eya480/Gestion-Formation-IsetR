@@ -8,15 +8,15 @@ import { CategoriesComponent } from './categories/categories.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink,NavComponent,FooterComponent,CategoriesComponent],
+  imports: [RouterLink, NavComponent, FooterComponent, CategoriesComponent, CategoriesComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
   titre: string =
-      'Bienvenue sur notre plateforme de gestion des sessions de formation';
+      'Transformez votre avenir avec nos formations inoubliables et dynamiques !';
     description: string =
-      'Découvrez nos catégories et formations pour développer vos compétences';
+      "Découvrez nos formations diversifiées adaptées à vos besoins professionnels. Que vous soyez débutant ou expert, nous proposons des parcours conçus pour vous aider à atteindre vos objectifs dans le domaine de la technologie, du développement et bien plus.";
   ngOnInit(){}
  
 }

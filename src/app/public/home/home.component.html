@@ -1,12 +1,30 @@
 
 <div class="container">
     <div class="container my-5">
-        <div class="container my-5">
+        <div class="container my-5 d-flex justify-content-center align-items-center" style="height: 500px;">
             <!-- Titre et description -->
              <div style="height:200px" class="col-12 text-center">
             <h1 class="display-4">{{ titre }}</h1>
             <p class="lead">{{ description }}</p>
+            <button type="button" routerLink="/register"  class="btn btn-lg btn-outline-dark">Rejoignez-Nous</button>
+          </div>
           </div>
           <hr>
+         <!-- Section du Programme de Formation -->
+<div id="programme" class="container my-5">
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h2 class="text-secondary fw-bold">Notre Programme de Formation</h2>
+        <p class="text-muted fs-5">
+          Nous proposons un programme complet de formations adaptées à différents niveaux et domaines d'expertise. 
+          Nos formations couvrent des technologies clés du développement web, mobile, des bases de données, ainsi que des spécialités comme la cybersécurité, le cloud computing, et bien d'autres.
+        </p>
+        <p class="text-muted fs-5">
+          Que vous soyez débutant ou expert, vous trouverez des modules qui répondront à vos besoins pour améliorer vos compétences et rester compétitif sur le marché du travail.
+        </p>
+      </div>
+    </div>
+  </div>  
+  <hr>
     <app-categories></app-categories>
 </div>
