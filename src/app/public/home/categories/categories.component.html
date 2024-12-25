@@ -1,65 +1,25 @@
-   <!-- Section des Catégories de Formations -->
-<!--<div id="categories" class="container my-5">
-  <h2 class="text-center mb-4">Nos Catégories de Formations</h2>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-    @for(categorie of categories; track categorie) {
-    <div class="col">
-      <div class="card h-100 shadow-sm border-0">
-        <img src="../../../../assets/code.webp" class="card-img-top rounded-top" alt="Formation 1">
-        <div class="card-body text-center">
-          <h5 class="card-title fw-bold">{{ categorie }}</h5>
-        </div>
-        <div class="card-footer text-center bg-light">
-          <a [routerLink]="['/formations']" class="btn btn-primary btn-sm">Voir les formations</a>
-        </div>
-      </div>
-    </div>
-    }
-  </div>
-</div>
-<div class="container my-5">
-  <div class="row mb-4">
-    <div class="col-12 text-center">
-      <h2 class="text-secondary fw-bold">Nos Formations :</h2>
-      <p class="text-muted fs-5">
-        Explorez nos formations en détail, que ce soit pour améliorer vos compétences ou pour
-        découvrir de nouveaux domaines. Nous avons une formation pour chaque besoin.
-      </p>
-    </div>
-  </div>
-
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-    @for(formation of formations; track formation) {
-    <div class="col">
-      <div class="card h-100 shadow-sm border-0">
-        <div class="card-body text-center">
-          <h5 class="card-title text-primary fw-bold">{{ formation.titre }}</h5>
-          <p class="card-text text-muted">{{ formation.description }}</p>
-          <a [routerLink]="['../','trainingDetails', formation.id]" class="btn btn-outline-primary btn-sm">Voir les détails</a>
-        </div>
-      </div>
-    </div>
-    }
-  </div>
-</div>
--->
-
 <!-- Section des Catégories de Formations -->
 <div id="categories" class="container my-5">
-  <h2 class="text-center text-secondary fw-bold">Nos Catégories de Formations</h2>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-    @for(categorie of categories; track categorie) {
-    <div class="col">
-      <div class="card h-100 shadow-sm border-0">
-        <img src="../../../../assets/code.webp" class="card-img-top rounded-top" alt="Formation 1">
-        <div class="card-body text-center">
-          <h5 class="card-title fw-bold">{{ categorie }}</h5>
+  <h2 class="text-center text-primary fw-bold mb-4">Nos Catégories de Formations</h2>
+  <div class="categories-wrapper">
+    <div class="categories-container">
+      @for(categorie of categories; track categorie) {
+      <div class="category-card">
+        <div 
+          class="bg-image" 
+          style="background-image: url('../../../../assets/code.webp'); background-size: cover; background-position: center; height: 180px;">
         </div>
-        <div class="card-footer text-center bg-light">
-          <a [routerLink]="['/formations']" class="btn btn-primary btn-sm">Voir les formations</a>
+        <div class="card-body text-center p-4">
+          <h5 class="card-title text-dark fw-bold mb-3">{{ categorie }}</h5>
+          <a 
+            [routerLink]="['/formations']" 
+            class="btn btn-primary btn-sm px-4 rounded-pill fw-bold shadow-sm"
+          >
+            Voir les formations
+          </a>
         </div>
       </div>
+      }
     </div>
-    }
   </div>
 </div>

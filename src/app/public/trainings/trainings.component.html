@@ -1,41 +1,56 @@
 <form [formGroup]="trainingsForm">
-  <div class="container-fluid dashboard mt-4">
-    <div class="row">
-      <!-- Left side: Training title -->
+  <div class="container-fluid dashboard mt-5">
+    <!-- Title and Search -->
+    <div class="row mb-5 align-items-center">
+      <!-- Title -->
       <div class="col-12 col-md-6">
-        <h1 class="mb-4">Trainings</h1>
+        <h1 class="text-dark fw-bold">🚀 Trainings</h1>
+        <p class="text-muted">Explore our available trainings and find the one that suits you best</p>
       </div>
-      <!-- Right side: Search input -->
-      <div class="col-12 col-md-6 d-flex justify-content-end mb-4">
-        <input
-          formControlName="searchInput"
-          class="form-control w-50"
-          type="search"
-          placeholder="Search for Trainings"
-        />
+      <!-- Search Input -->
+      <div class="col-12 col-md-6 d-flex justify-content-end">
+        <div class="input-group w-75">
+          <input
+            formControlName="searchInput"
+            class="form-control border-primary"
+            type="search"
+            placeholder="Search for Trainings"
+          />
+        </div>
       </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3"> <!-- Adjusted for 3 cards per row -->
+
+    <!-- Training Cards -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
       @if(trainingsArr().length > 0) {
         @for(training of trainingsArr(); track training) {
-          <div class="card shadow-sm border-primary mb-4 small-card">
-            <!-- Background Image inside the Card -->
-            <div class="card-body text-center">
-              <h5 class="card-title text-primary fw-bold">
-                {{ training.titre }}
-              </h5>
-              <p><strong>{{ training.description }}</strong> </p>
-              <a [routerLink]="['../','trainingDetails', training.id]" class="btn btn-outline-primary btn-sm">Voir les détails</a>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-lg">
+              <!-- Card Header (Optional Background) -->
+              <div class="card-header bg-primary text-white text-center">
+                <h5 class="card-title fw-bold mb-0">{{ training.titre }}</h5>
               </div>
+              <!-- Card Body -->
+              <div class="card-body d-flex flex-column justify-content-between">
+                <p class="text-muted">{{ training.description }}</p>
+                <a
+                  [routerLink]="['../','trainingDetails', training.id]"
+                  class="btn btn-outline-primary btn-sm mt-3"
+                >
+                  View Details
+                </a>
+              </div>
+            </div>
           </div>
-        } } @else{
-            <div class="alert alert-dismissible alert-danger ">
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                <strong>No Search Found!!</strong>
-              </div>
         }
-      </div>
+      } @else {
+        <!-- No Results Alert -->
+        <div class="col-12">
+          <div class="alert alert-warning text-center shadow-sm" role="alert">
+            <strong>No trainings found!</strong> Try adjusting your search criteria.
+          </div>
+        </div>
+      }
     </div>
-  </form>
-  
-  
+  </div>
+</form>

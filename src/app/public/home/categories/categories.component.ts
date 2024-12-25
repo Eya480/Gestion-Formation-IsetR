@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 export class CategoriesComponent implements OnInit {
   formations: any[] = [];
   categories: Set<string> = new Set();
+
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {

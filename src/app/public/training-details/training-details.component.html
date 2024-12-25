@@ -1,13 +1,16 @@
 <div class="container mt-5">
   <div class="card">
     <div class="card-body">
-      <h1 class="card-title">Détails de la formation : {{ training?.titre }}</h1>
+      <h1 class="card-title ">Détails de la formation : <span class="text-primary">{{ training?.titre }}</span></h1>
       
       <!-- Description de la formation -->
       <p class="lead">{{ training?.description }}</p>
 
-      <!-- Charge horaire -->
-      <p><strong>Charge horaire:</strong> {{ training?.chargeHoraire }} heures</p>
+      <p>
+        <span class="badge bg-info text-dark">
+          Charge horaire : {{ training?.chargeHoraire }} heures
+        </span>
+      </p>
 
       <!-- Liste des sessions à venir -->
       <h3 class="mt-4">Sessions à venir</h3>

@@ -1,0 +1,31 @@
+.categories-wrapper {
+    width: 100%;
+    height: 300px; /* Hauteur augmentée */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .categories-container {
+    display: flex;
+    animation: scrollRight 15s linear infinite;
+  }
+
+  .category-card {
+    width: 250px; /* Ajustez la largeur des cartes */
+    margin: 0 10px;
+    flex-shrink: 0;
+  }
+
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Stopper l'animation au hover */
+  .categories-wrapper:hover .categories-container {
+    animation-play-state: paused;
+  }
