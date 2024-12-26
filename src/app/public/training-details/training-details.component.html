@@ -1,27 +1,35 @@
 <div class="container mt-5">
-  <div class="card">
+  <div class="card shadow-lg">
     <div class="card-body">
-      <h1 class="card-title ">Détails de la formation : <span class="text-primary">{{ training?.titre }}</span></h1>
+      <h1 class="card-title text-primary">Détails de la formation : <span class="text-dark">{{ training?.titre }}</span></h1>
       
       <!-- Description de la formation -->
-      <p class="lead">{{ training?.description }}</p>
+      <p class="lead text-muted">{{ training?.description }}</p>
 
       <p>
-        <span class="badge bg-info text-dark">
+        <span class="badge bg-success text-white">
           Charge horaire : {{ training?.chargeHoraire }} heures
         </span>
       </p>
 
       <!-- Liste des sessions à venir -->
-      <h3 class="mt-4">Sessions à venir</h3>
+      <h3 class="mt-4 fw-bold">Sessions à venir</h3>
 
       @for(session of sessions; track session;) {
-        <div class="card mt-3">
+        <div class="card mt-3 border-primary">
+          <div class="card-header bg-primary text-white">
+            <strong>{{ session.description }}</strong>
+            <button type="button" 
+        class="btn btn-outline-light fw-bold float-end"
+        [routerLink]="['/public/register',session.id]" 
+        [disabled]="session.candidatsInscrits.length >= 15">
+    S'inscrire
+</button>
+
+          </div>
           <div class="card-body">
-            <p class="card-text mb-3"><strong>{{ session.description }}</strong></p> <!-- Mise en valeur de la description -->
-            
-            <table class="table table-bordered table-striped">
-              <thead>
+            <table class="table table-striped table-bordered table-hover">
+              <thead class="table-light">
                 <tr>
                   <th>Les formateurs</th>
                   <th>Date de début</th>
@@ -34,7 +42,7 @@
                     <!-- Afficher les formateurs pour chaque session -->
                     @for(trainers of session.formateurs; track trainers) {
                       @for(trainer of trainers ; track trainer){
-                        <div  class="text-danger">
+                        <div class="text-success">
                           {{ trainer.prenom }} {{ trainer.nom }} - ({{ trainer.specialites }})
                         </div>
                       }}
@@ -49,7 +57,7 @@
       }
 
       <!-- Button to view the training program -->
-      <a href="{{ training?.programme }}" class="btn btn-primary mt-3" target="_blank">Voir le programme de la formation</a>
+      <a href="{{ training?.programme }}" class="btn btn-outline-primary mt-3" target="_blank">Voir le programme de la formation</a>
     </div>
   </div>
 </div>

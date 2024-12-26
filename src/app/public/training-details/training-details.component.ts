@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { TrainingsService } from '../services/trainings/trainings.service';
 import { Trainings } from '../models/trainings';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-training-details',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,RouterModule],
   templateUrl: './training-details.component.html',
   styleUrl: './training-details.component.css'
 })

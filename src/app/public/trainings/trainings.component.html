@@ -32,7 +32,10 @@
               </div>
               <!-- Card Body -->
               <div class="card-body d-flex flex-column justify-content-between">
-                <p class="text-muted">{{ training.description }}</p>
+                <p class="text-dark">{{ training.description }}</p>
+                <div  class="text-danger fw-bold">
+                  {{training.niveau}}
+                </div>
                 <a
                   [routerLink]="['../','trainingDetails', training.id]"
                   class="btn btn-outline-primary btn-sm mt-3"

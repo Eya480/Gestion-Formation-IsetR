@@ -1,72 +1,199 @@
 {
-  "candidats": [
-    {
-      "id": "1",
-      "nom": "Khawla",
-      "prenom": "Zribi",
-      "email": "zribikh@email.com",
-      "photo": "https://picsum.photos/400/?random",
-      "motDePasse": "password123"
-    },
-    {
-      "id": "2",
-      "nom": "Hedi",
-      "prenom": "Joui",
-      "email": "jouihz@email.com",
-      "photo": "https://picsum.photos/400/?random",
-      "motDePasse": "password321"
-    },
-    {
-      "id": "3",
-      "nom": "Amina",
-      "prenom": "Ben Salem",
-      "email": "aminabensalem@email.com",
-      "photo": "https://picsum.photos/400/?random",
-      "motDePasse": "securepass456"
-    },
-    {
-      "id": "4",
-      "nom": "Sami",
-      "prenom": "Toumi",
-      "email": "samitoumi@email.com",
-      "photo": "https://picsum.photos/400/?random",
-      "motDePasse": "pass789"
-    }
-  ],
+ "candidats": [
+  {
+    "id": 1,
+    "nom": "Khawla",
+    "prenom": "Zribi",
+    "email": "zribikh@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "12345678",
+    "motDePasse": "password123"
+  },
+  {
+    "id": 2,
+    "nom": "Hedi",
+    "prenom": "Joui",
+    "email": "jouihz@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "23456789",
+    "motDePasse": "password321"
+  },
+  {
+    "id": 3,
+    "nom": "Amina",
+    "prenom": "Ben Salem",
+    "email": "aminabensalem@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "34567890",
+    "motDePasse": "securepass456"
+  },
+  {
+    "id": 4,
+    "nom": "Sami",
+    "prenom": "Toumi",
+    "email": "samitoumi@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "45678901",
+    "motDePasse": "pass789"
+  },
+  {
+    "id": 5,
+    "nom": "Rania",
+    "prenom": "Baccouche",
+    "email": "raniabaccouche@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "56789012",
+    "motDePasse": "rania1234"
+  },
+  {
+    "id": 6,
+    "nom": "Mourad",
+    "prenom": "Hamadi",
+    "email": "mourad.hamadi@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "67890123",
+    "motDePasse": "mouradpass567"
+  },
+  {
+    "id": 7,
+    "nom": "Leila",
+    "prenom": "Mansouri",
+    "email": "leilamansouri@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "78901234",
+    "motDePasse": "leila7890"
+  },
+  {
+    "id": 8,
+    "nom": "Anis",
+    "prenom": "Mahfoudh",
+    "email": "anismahfoudh@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "89012345",
+    "motDePasse": "anis3210"
+  },
+  {
+    "id": 9,
+    "nom": "Sonia",
+    "prenom": "Radhouani",
+    "email": "soniaradhouani@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "90123456",
+    "motDePasse": "sonia6543"
+  },
+  {
+    "id": 10,
+    "nom": "Walid",
+    "prenom": "Hachicha",
+    "email": "walidhachicha@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "01234567",
+    "motDePasse": "walidpass890"
+  },
+  {
+    "id": 11,
+    "nom": "Salma",
+    "prenom": "Belaid",
+    "email": "salmabelaid@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "12345789",
+    "motDePasse": "salma0987"
+  },
+  {
+    "id": 12,
+    "nom": "Ahmed",
+    "prenom": "Fakhfakh",
+    "email": "ahmedfakhfakh@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "23456890",
+    "motDePasse": "ahmed1112"
+  },
+  {
+    "id": 13,
+    "nom": "Khaled",
+    "prenom": "Trabelsi",
+    "email": "khaledtrabelsi@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "34567901",
+    "motDePasse": "khaled1234"
+  },
+  {
+    "id": 14,
+    "nom": "Maya",
+    "prenom": "Boudhina",
+    "email": "mayaboudhina@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "45679012",
+    "motDePasse": "maya4321"
+  },
+  {
+    "id": 15,
+    "nom": "Omar",
+    "prenom": "Brahim",
+    "email": "omarbrahim@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "56790123",
+    "motDePasse": "omar8765"
+  },
+  {
+    "id": 16,
+    "nom": "Ines",
+    "prenom": "Chebbi",
+    "email": "ineschebbi@email.com",
+    "photo": "https://picsum.photos/400/?random",
+    "cin": "67891234",
+    "motDePasse": "ines1234"
+  }
+]
+
+,
   "formateurs": [
-    {
-      "id": "1",
-      "nom": "Martin",
-      "prenom": "Pierre",
-      "email": "pierre.martin@example.com",
-      "telephone": "1234567890",
-      "specialites": ["Développement Web", "JavaScript"]
-    },
-    {
-      "id": "2",
-      "nom": "Dubois",
-      "prenom": "Lucie",
-      "email": "lucie.dubois@example.com",
-      "telephone": "9876543210",
-      "specialites": ["Angular", "React"]
-    },
-    {
-      "id": "3",
-      "nom": "Ben Ali",
-      "prenom": "Mehdi",
-      "email": "mehdi.benali@example.com",
-      "telephone": "5555555555",
-      "specialites": ["Python", "Django"]
-    },
-    {
-      "id": "4",
-      "nom": "Jbeli",
-      "prenom": "Qayes",
-      "email": "jbei.ss@example.com",
-      "telephone": "22222222",
-      "specialites": ["Python", "Java"]
-    }
-  ],
+  {
+    "id": 1,
+    "nom": "Martin",
+    "prenom": "Pierre",
+    "email": "pierre.martin@example.com",
+    "telephone": "1234567890",
+    "cin": "12345678",
+    "photo": "pierre_martin.jpg",
+    "cv": "cv_pierre_martin.pdf",
+    "specialites": ["Développement Web", "JavaScript"]
+  },
+  {
+    "id": 2,
+    "nom": "Dubois",
+    "prenom": "Lucie",
+    "email": "lucie.dubois@example.com",
+    "telephone": "9876543210",
+    "cin": "23456789",
+    "photo": "lucie_dubois.jpg",
+    "cv": "cv_lucie_dubois.pdf",
+    "specialites": ["Angular", "React"]
+  },
+  {
+    "id": 3,
+    "nom": "Ben Ali",
+    "prenom": "Mehdi",
+    "email": "mehdi.benali@example.com",
+    "telephone": "5555555555",
+    "cin": "34567890",
+    "photo": "mehdi_benali.jpg",
+    "cv": "cv_mehdi_benali.pdf",
+    "specialites": ["Python", "Django"]
+  },
+  {
+    "id": 4,
+    "nom": "Jbeli",
+    "prenom": "Qayes",
+    "email": "jbei.ss@example.com",
+    "telephone": "22222222",
+    "cin": "45678901",
+    "photo": "qayes_jbeli.jpg",
+    "cv": "cv_qayes_jbeli.pdf",
+    "specialites": ["Python", "Java"]
+  }
+]
+,
   "formations": [
     {
       "id": "1",
@@ -177,7 +304,7 @@
         "dateDebut": "2025-01-10T09:00:00",
         "dateFin": "2025-01-10T16:00:00",
         "description": "Session de formation sur Angular",
-        "candidatsInscrits": ["1", "2"]
+        "candidatsInscrits": ["1", "2","4","5","6","7","8","9","10","11","12","13","14","15","16","3"]
       },
       {
         "id": "2",
@@ -195,7 +322,7 @@
         "dateDebut": "2025-02-01T09:30:00",
         "dateFin": "2025-02-01T16:30:00",
         "description": "Session avancée sur React",
-        "candidatsInscrits": ["4"]
+        "candidatsInscrits": []
       },
       {
         "id": "4",
@@ -213,7 +340,7 @@
         "dateDebut": "2025-03-01T10:00:00",
         "dateFin": "2025-03-01T17:00:00",
         "description": "Formation sur SQL et bases de données",
-        "candidatsInscrits": ["2", "4"]
+        "candidatsInscrits": []
       },
       {
         "id": "6",
@@ -231,7 +358,7 @@
         "dateDebut": "2025-04-10T10:00:00",
         "dateFin": "2025-04-10T17:00:00",
         "description": "Formation sur la Cybersécurité pour débutants",
-        "candidatsInscrits": ["4"]
+        "candidatsInscrits": ["4","2","1","3"]
       },
       {
         "id": "8",
@@ -258,7 +385,7 @@
         "dateDebut": "2025-06-15T10:00:00",
         "dateFin": "2025-06-15T17:00:00",
         "description": "Session sur le Cloud Computing et AWS",
-        "candidatsInscrits": ["4"]
+        "candidatsInscrits": []
       }
     ]
   }

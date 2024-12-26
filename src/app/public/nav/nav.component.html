@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
       <a class="navbar-brand" routerLink="\">
-          <img src="../../../assets/IsetR.png" alt="Logo" style="height: 40px">
+          <img src="../../../assets/IsetR.png" alt="Logo" style="height: 60px">
       </a>      
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,27 +9,19 @@
     <div class="collapse navbar-collapse" id="navbarColor03">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" routerLink="home">Home
+          <a class="nav-link active" routerLink="/public/home">Home
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/trainings">Courses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Candidate Space</a>
+          <a class="nav-link" routerLink="/public/trainings">Courses</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-sm-2" type="search" placeholder="Search">
-        <button class="btn btn-secondary me-2" type="submit">Search</button> 
-        <!-- Login et SignUp -->
-      </form>
-      <button type="button" routerLink="/login" class="btn btn-outline-primary me-2">Login</button>
-      <button type="button" routerLink="/register" class="btn btn-warning">Register</button>
+      <button type="button" routerLink="#" class="btn btn-outline-primary me-2">Login</button>
+      <button type="button" routerLink="public/register" class="btn btn-warning">Register</button>
     </div>
   </div>
 </nav>

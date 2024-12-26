@@ -2,13 +2,13 @@ import {
   Component,
   OnInit,
   signal,
-  WritableSignal,
+  WritableSignal//trainingsArr est automatiquement mise à jour,
 } from '@angular/core';
 import { TrainingsService } from '../services/trainings/trainings.service';
 import { Trainings } from '../models/trainings';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { map, of, startWith } from 'rxjs';
-import { RouterModule } from '@angular/router'; // Import RouterModule
+import { RouterModule } from '@angular/router'; 
 
 @Component({
   selector: 'app-trainings',
@@ -22,12 +22,9 @@ export class TrainingsComponent implements OnInit {
   originalTrainingArr: Trainings[] = [];
   trainingsForm!: FormGroup;
 
-  constructor(
-    private trainingService: TrainingsService,
-    private fb: FormBuilder
-  ) {
+  constructor(private trainingService: TrainingsService,private fb: FormBuilder) {
     this.trainingsForm = this.fb.group({
-      searchInput: [''],
+    searchInput: [''],
     });
   }
 
@@ -42,6 +39,7 @@ export class TrainingsComponent implements OnInit {
       },
       complete: () => {
         console.log('Completed');
+        //La méthode onSearchInputChanges capte chaque modification en temps réel.
         this.onSearchInputChanges();
         this.trainingsArr.set(this.originalTrainingArr);
       },
@@ -50,8 +48,7 @@ export class TrainingsComponent implements OnInit {
 
   onSearchInputChanges() {
     console.log(this.trainingsForm);
-    ['s']
-    this.trainingsForm.controls['searchInput'].valueChanges
+    this.trainingsForm.controls['searchInput'].valueChanges//émissions des valeurs du champ de recherche
       .pipe(
         startWith(''),
         map((filterValue: string) => {
@@ -59,6 +56,7 @@ export class TrainingsComponent implements OnInit {
           const cleansedFilterValue = filterValue.trim().toLowerCase();
           if (cleansedFilterValue.length > 0) {
             // Filter the trainings array based on tags
+            //La liste des formations est filtrée pour ne conserver que celles dont les tags contiennent le texte saisi.
             return this.trainingsArr().filter((training) =>
               training.tags.some((tag)=> tag.toLowerCase().includes(cleansedFilterValue))
             );
