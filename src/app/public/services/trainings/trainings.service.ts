@@ -33,6 +33,8 @@ export class TrainingsService {
     // Use forkJoin to wait for all the requests to complete
     return forkJoin(formateurRequests);
   }
+  //
+  
   
 
   
