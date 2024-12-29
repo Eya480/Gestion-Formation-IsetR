@@ -1,31 +1,18 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes,Router } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ManageCandidateComponent } from './manage-candidate/manage-candidate.component';
-import { ManageTrainerComponent } from './manage-trainer/manage-trainer.component';
+import { ManageFormationsComponent } from './manage-formations/manage-formations.component';
 import { ManageSessionComponent } from './manage-session/manage-session.component';
+import { ManageTrainerComponent } from './manage-trainer/manage-trainer.component';
+import { ManageCandidateComponent } from './manage-candidate/manage-candidate.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: DashboardComponent,
-  },
-  {
-    path: 'candidate',
-    component: ManageCandidateComponent,
-  },
-  {
-    path: 'trainer',
-    component: ManageTrainerComponent,
-  },
-  {
-    path: 'courses',
-    component: ManageTrainerComponent,
-  },
-  {
-    path: 'sessions',
-    component: ManageSessionComponent,
-  },
+  { path: 'dashboard' , component: DashboardComponent},
+  {path : '',redirectTo : 'dashboard',pathMatch : 'full'},
+  { path: 'trainings', component: ManageFormationsComponent },
+  { path: 'sessions', component: ManageSessionComponent },
+  { path: 'trainers', component: ManageTrainerComponent },
+  { path: 'candidats', component: ManageCandidateComponent },
 ];
 
 @NgModule({

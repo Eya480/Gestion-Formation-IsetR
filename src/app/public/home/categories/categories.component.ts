@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/public.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { PublicService } from '../../services/trainings/public.service';
 
 @Component({
   selector: 'app-categories',
@@ -14,7 +14,7 @@ export class CategoriesComponent implements OnInit {
   formations: any[] = [];
   categories: Set<string> = new Set();
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: PublicService) {}
 
   ngOnInit(): void {
     // Charger les formations

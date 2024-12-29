@@ -1,14 +1,14 @@
 <div class="container mt-5">
   <div class="card shadow-lg">
     <div class="card-body">
-      <h1 class="card-title text-primary">Détails de la formation : <span class="text-dark">{{ training?.titre }}</span></h1>
+      <h1 class="card-title text-primary">Détails de la formation : <span class="text-dark">{{ training.titre }}</span></h1>
       
       <!-- Description de la formation -->
-      <p class="lead text-muted">{{ training?.description }}</p>
+      <p class="lead text-muted">{{ training.description }}</p>
 
       <p>
         <span class="badge bg-success text-white">
-          Charge horaire : {{ training?.chargeHoraire }} heures
+          Charge horaire : {{ training.chargeHoraire }} heures
         </span>
       </p>
 
@@ -21,7 +21,7 @@
             <strong>{{ session.description }}</strong>
             <button type="button" 
         class="btn btn-outline-light fw-bold float-end"
-        [routerLink]="['/public/register',session.id]" 
+        [routerLink]="['/public/registerSession',session.id]" 
         [disabled]="session.candidatsInscrits.length >= 15">
     S'inscrire
 </button>
@@ -57,7 +57,7 @@
       }
 
       <!-- Button to view the training program -->
-      <a href="{{ training?.programme }}" class="btn btn-outline-primary mt-3" target="_blank">Voir le programme de la formation</a>
+      <a href="{{ training.programme }}" class="btn btn-outline-primary mt-3" target="_blank">Voir le programme de la formation</a>
     </div>
   </div>
 </div>

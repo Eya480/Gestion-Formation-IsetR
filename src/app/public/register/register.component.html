@@ -1,0 +1,142 @@
+<section class="vh-100" style="background-image: url('../../../assets/Blog-articles-headers.png'); background-size: cover; background-position: center;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                <div class="card shadow-lg" style="border-radius: 1rem; backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.8);">
+                    <div class="row g-0">
+                        <!-- Image Section -->
+                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <img src="../../../assets/codee.jpg"
+                                alt="Formulaire d'inscription" 
+                                class="img-fluid" 
+                                style="border-radius: 1rem 0 0 1rem; object-fit: cover;" />
+                        </div>
+
+                        <!-- Form Section -->
+                        <div class="col-md-7">
+                            <div class="card-body p-5 d-flex flex-column justify-content-center">
+                                <h2 class="text-center fw-bold mb-4">Créer un compte</h2>
+                                <p class="text-center text-muted mb-4">
+                                    Inscrivez-vous pour rejoindre notre plateforme.
+                                </p>
+
+                                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                                    <!-- Nom Input -->
+                                    <div class="form-floating mb-3">
+                                        <input 
+                                          type="text" 
+                                          id="nomInput" 
+                                          formControlName="nom" 
+                                          class="form-control" 
+                                          placeholder="Nom" 
+                                          required
+                                        >
+                                        <label for="nomInput">*Nom</label>
+                                        @if(registerForm.controls['nom'].touched && registerForm.controls['nom'].invalid){
+                                            <span class="error">Ce champ est obligatoire!</span>
+                                        }
+                                    </div>
+
+                                    <!-- Prénom Input -->
+                                    <div class="form-floating mb-3">
+                                        <input 
+                                          type="text" 
+                                          id="prenomInput" 
+                                          formControlName="prenom" 
+                                          class="form-control" 
+                                          placeholder="Prénom" 
+                                          required
+                                        >
+                                        <label for="prenomInput">*Prénom</label>
+                                        @if(registerForm.controls['prenom'].touched && registerForm.controls['prenom'].invalid){
+                                            <span class="error">Ce champ est obligatoire!</span>
+                                        }
+                                    </div>
+
+                                    <!-- Email Input -->
+                                    <div class="form-floating mb-3">
+                                        <input 
+                                          type="email" 
+                                          id="emailInput" 
+                                          formControlName="email" 
+                                          class="form-control" 
+                                          placeholder="Adresse e-mail" 
+                                          required
+                                        >
+                                        <label for="emailInput">*Adresse e-mail</label>
+                                        @if(registerForm.controls['email'].touched && (registerForm.controls['email'].invalid || registerForm.controls['email'].dirty)){
+                                            <span class="error">Email invalide</span>
+                                        }
+                                    </div>
+
+                                    <!-- CIN Input -->
+                                    <div class="form-floating mb-3">
+                                        <input 
+                                          type="text" 
+                                          id="cinInput" 
+                                          formControlName="cin" 
+                                          class="form-control" 
+                                          placeholder="Numéro CIN" 
+                                          required
+                                        >
+                                        <label for="cinInput">*Numéro CIN</label>
+                                        @if(registerForm.controls['cin'].touched && registerForm.controls['cin'].invalid){
+                                            <span class="error">Ce champ est obligatoire!</span>
+                                        }
+                                    </div>
+
+                                    <!-- Mot de Passe Input -->
+                                    <div class="form-floating mb-3">
+                                        <input 
+                                          type="password" 
+                                          id="passwordInput" 
+                                          formControlName="motDePasse" 
+                                          class="form-control" 
+                                          placeholder="Mot de passe" 
+                                          required
+                                        >
+                                        <label for="passwordInput">*Mot de passe</label>
+                                        @if(registerForm.controls['motDePasse'].touched && registerForm.controls['motDePasse'].invalid){
+                                            <span class="error">Ce champ est obligatoire!</span>
+                                        }
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input 
+                                          type="text" 
+                                          id="photoInput" 
+                                          class="form-control"
+                                          formControlName="photo"
+                                          placeholder="Votre photo" 
+                                         />
+                                         <label for="passwordInput">Photo</label>
+                                      </div>
+                                    <!-- Error Message -->
+                                    @if (errorMessage){
+                                    <div class="alert alert-danger mt-3" [innerHTML]="errorMessage">
+                                                    {{ errorMessage }}
+                                    </div>
+                                }
+                                    <!-- Register Button -->
+                                    <div class="d-grid mb-4">
+                                        <button type="submit" class="btn btn-primary btn-lg" [disabled]="registerForm.invalid">
+                                            S'inscrire
+                                        </button>
+                                    </div>
+
+                                    <!-- Login Link -->
+                                    <p class="text-center">
+                                        <span>Vous avez déjà un compte ?</span>
+                                        <a href="/public/login" class="text-decoration-none text-primary fw-bold"
+                                        >
+                                            Connectez-vous ici
+                                        </a>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

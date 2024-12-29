@@ -1,0 +1,52 @@
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-lg border-light rounded-3">
+        <div class="card-body">
+          <h1 class="card-title text-center text-primary mb-4">Inscription à la session <p class="text-primary-emphasis">
+            "{{ session.description }}"</p></h1>
+  
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <!-- Champ pour le nom -->
+            <div class="mb-3">
+              <label for="nom" class="form-label">*Nom</label>
+              <input type="text" class="form-control" id="nom" formControlName="nom" required />
+              @if(registerForm.controls['nom'].touched && registerForm.controls['nom'].invalid){
+                  <span class="error">Ce champ est Obligatoire</span>
+              }
+            </div>
+  
+            <!-- Champ pour le prénom -->
+            <div class="mb-3">
+              <label for="prenom" class="form-label">*Prénom</label>
+              <input type="text" class="form-control" id="prenom" formControlName="prenom" required />
+              @if(registerForm.controls['prenom'].touched && registerForm.controls['prenom'].invalid){
+                <span class="error">Ce champ est Obligatoire</span>
+            }
+            </div>
+  
+            <!-- Champ pour l'email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">*Email</label>
+              <input type="email" class="form-control" id="email" formControlName="email" required />
+              @if(registerForm.controls['email'].touched && registerForm.controls['email'].invalid){
+                <span class="error">Ce champ est Obligatoire</span>
+            }
+            </div>
+  
+            <!-- Message d'erreur -->
+             @if (errorMessage){
+            <div class="alert alert-danger mt-3">
+              <strong>Error:</strong> {{ errorMessage }}
+            </div>
+          }
+            <!-- Bouton d'inscription -->
+            <button type="submit" class="btn btn-primary w-100" [disabled]="!registerForm.valid || session.candidatsInscrits.length >= 15">
+              S'inscrire
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

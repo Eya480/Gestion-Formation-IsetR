@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { forkJoin, Observable } from 'rxjs';
-import { Trainings } from '../../models/trainings';
+import { forkJoin, map, Observable } from 'rxjs';
+import { Trainings } from '../../../models/trainings';
+import { Candidate } from '../../../models/candidate';
+import { Session } from '../../../models/session';
 
 @Injectable({
   providedIn: 'root',
 })
-export class TrainingsService {
+export class PublicService {
   private baseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
@@ -24,7 +26,6 @@ export class TrainingsService {
   //
   getFormateursByIds(formateurIds: string[]): Observable<any[]> {
     // Construct the query string with multiple 'id' parameters
-    const params = formateurIds.map(id => `id=${id}`).join('&');
     const formateurRequests = formateurIds.map(id => {
       const url = `${this.baseUrl}/formateurs?id=${id}`;
       return this.http.get<any>(url); // Return an observable for each formateur
@@ -34,9 +35,22 @@ export class TrainingsService {
     return forkJoin(formateurRequests);
   }
   //
+  addcandidate(candidate: Candidate): Observable<any> {
+    return this.http.post(`${this.baseUrl}/candidats`, candidate);
+  }
   
-  
+  getUserByEmail(email: string): Observable<Candidate[]> {
+    // Renvoie un tableau de candidats avec cet email
+    return this.http.get<Candidate[]>(`${this.baseUrl}/candidats?email=${email}`);
+  }
+  // Récupérer les détails d'une session par ID
+  getSessionById(sessionId: string): Observable<Session> {
+    return this.http.get<Session>(`${this.baseUrl}/sessions/${sessionId}`);
+  }
 
+  updateSession(session: Session): Observable<Session> {
+    return this.http.put<Session>(`${this.baseUrl}/sessions/${session.id}`, session);
+  }
   
   
 }

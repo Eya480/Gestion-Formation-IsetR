@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { TrainingsService } from '../services/trainings/trainings.service';
-import { Trainings } from '../models/trainings';
+import { PublicService } from '../services/trainings/public.service';
+import { Trainings } from '../../models/trainings';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -12,12 +12,12 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrl: './training-details.component.css'
 })
 export class TrainingDetailsComponent implements OnInit {
-  training: Trainings | undefined;
+  training!: Trainings;
   sessions: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
-    private trainingsService: TrainingsService
+    private trainingsService: PublicService
   ) {}
 
   ngOnInit(): void {

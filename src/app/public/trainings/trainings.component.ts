@@ -4,8 +4,8 @@ import {
   signal,
   WritableSignal//trainingsArr est automatiquement mise à jour,
 } from '@angular/core';
-import { TrainingsService } from '../services/trainings/trainings.service';
-import { Trainings } from '../models/trainings';
+import { PublicService } from '../services/trainings/public.service';
+import { Trainings } from '../../models/trainings';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { map, of, startWith } from 'rxjs';
 import { RouterModule } from '@angular/router'; 
@@ -22,7 +22,7 @@ export class TrainingsComponent implements OnInit {
   originalTrainingArr: Trainings[] = [];
   trainingsForm!: FormGroup;
 
-  constructor(private trainingService: TrainingsService,private fb: FormBuilder) {
+  constructor(private trainingService: PublicService,private fb: FormBuilder) {
     this.trainingsForm = this.fb.group({
     searchInput: [''],
     });

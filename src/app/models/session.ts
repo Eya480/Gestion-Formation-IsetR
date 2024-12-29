@@ -5,5 +5,5 @@ export interface Session {
     dateDebut: string;  // ISO 8601 format
     dateFin: string;    // ISO 8601 format
     description: string;
-    candidatsInscrits: number[];  // Array
+    candidatsInscrits: string[];  // Array
 }

@@ -1,13 +1,45 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-
+import { FormBuilder, FormGroup,ReactiveFormsModule } from '@angular/forms';
+import { PublicService } from '../services/trainings/public.service';
+import { Router } from '@angular/router'; 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-
+  login!: FormGroup;
+  errorMessage: string = ''; 
+  constructor(private fb:FormBuilder,private candidateService : PublicService,private router: Router){
+     // Initialisation du formulaire
+     this.login = this.fb.group({
+      email: [''],
+      password: ['']
+    });
+  }
+  loginCandidate(login: FormGroup) {
+    this.candidateService.getUserByEmail(login.value.email).subscribe({
+      next: (candidates) => {
+        const candidate = candidates[0];
+        if (candidate) {
+          if (candidate.motDePasse === login.value.password) {
+            alert(`Connexion réussie ! Bienvenue, ${candidate.nom}!`);
+            this.router.navigate(['/public/trainings']);
+          } else {
+            // Mot de passe incorrect
+            this.errorMessage = 'Mot de passe incorrect.';
+          }
+        } else {
+          // Email non trouvé, proposer l'inscription
+          this.errorMessage = "Aucun utilisateur trouvé avec cet email. Veuillez vous inscrire svp !";
+        }
+      },
+      error: () => {
+        this.errorMessage = 'Erreur de connexion. Veuillez réessayer.';
+      }
+    });
+  }
+  
 }

@@ -1,199 +1,217 @@
 {
- "candidats": [
-  {
-    "id": 1,
-    "nom": "Khawla",
-    "prenom": "Zribi",
-    "email": "zribikh@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "12345678",
-    "motDePasse": "password123"
-  },
-  {
-    "id": 2,
-    "nom": "Hedi",
-    "prenom": "Joui",
-    "email": "jouihz@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "23456789",
-    "motDePasse": "password321"
-  },
-  {
-    "id": 3,
-    "nom": "Amina",
-    "prenom": "Ben Salem",
-    "email": "aminabensalem@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "34567890",
-    "motDePasse": "securepass456"
-  },
-  {
-    "id": 4,
-    "nom": "Sami",
-    "prenom": "Toumi",
-    "email": "samitoumi@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "45678901",
-    "motDePasse": "pass789"
-  },
-  {
-    "id": 5,
-    "nom": "Rania",
-    "prenom": "Baccouche",
-    "email": "raniabaccouche@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "56789012",
-    "motDePasse": "rania1234"
-  },
-  {
-    "id": 6,
-    "nom": "Mourad",
-    "prenom": "Hamadi",
-    "email": "mourad.hamadi@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "67890123",
-    "motDePasse": "mouradpass567"
-  },
-  {
-    "id": 7,
-    "nom": "Leila",
-    "prenom": "Mansouri",
-    "email": "leilamansouri@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "78901234",
-    "motDePasse": "leila7890"
-  },
-  {
-    "id": 8,
-    "nom": "Anis",
-    "prenom": "Mahfoudh",
-    "email": "anismahfoudh@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "89012345",
-    "motDePasse": "anis3210"
-  },
-  {
-    "id": 9,
-    "nom": "Sonia",
-    "prenom": "Radhouani",
-    "email": "soniaradhouani@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "90123456",
-    "motDePasse": "sonia6543"
-  },
-  {
-    "id": 10,
-    "nom": "Walid",
-    "prenom": "Hachicha",
-    "email": "walidhachicha@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "01234567",
-    "motDePasse": "walidpass890"
-  },
-  {
-    "id": 11,
-    "nom": "Salma",
-    "prenom": "Belaid",
-    "email": "salmabelaid@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "12345789",
-    "motDePasse": "salma0987"
-  },
-  {
-    "id": 12,
-    "nom": "Ahmed",
-    "prenom": "Fakhfakh",
-    "email": "ahmedfakhfakh@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "23456890",
-    "motDePasse": "ahmed1112"
-  },
-  {
-    "id": 13,
-    "nom": "Khaled",
-    "prenom": "Trabelsi",
-    "email": "khaledtrabelsi@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "34567901",
-    "motDePasse": "khaled1234"
-  },
-  {
-    "id": 14,
-    "nom": "Maya",
-    "prenom": "Boudhina",
-    "email": "mayaboudhina@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "45679012",
-    "motDePasse": "maya4321"
-  },
-  {
-    "id": 15,
-    "nom": "Omar",
-    "prenom": "Brahim",
-    "email": "omarbrahim@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "56790123",
-    "motDePasse": "omar8765"
-  },
-  {
-    "id": 16,
-    "nom": "Ines",
-    "prenom": "Chebbi",
-    "email": "ineschebbi@email.com",
-    "photo": "https://picsum.photos/400/?random",
-    "cin": "67891234",
-    "motDePasse": "ines1234"
-  }
-]
-
-,
+  "candidats": [
+    {
+      "id": "1",
+      "nom": "Khawla",
+      "prenom": "Zribi",
+      "email": "zribikh@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "12345678",
+      "motDePasse": "password123"
+    },
+    {
+      "id": "2",
+      "nom": "Hedi",
+      "prenom": "Joui",
+      "email": "jouihz@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "23456789",
+      "motDePasse": "password321"
+    },
+    {
+      "id": "3",
+      "nom": "Amina",
+      "prenom": "Ben Salem",
+      "email": "aminabensalem@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "34567890",
+      "motDePasse": "securepass456"
+    },
+    {
+      "id": "4",
+      "nom": "Sami",
+      "prenom": "Toumi",
+      "email": "samitoumi@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "45678901",
+      "motDePasse": "pass789"
+    },
+    {
+      "id": "5",
+      "nom": "Rania",
+      "prenom": "Baccouche",
+      "email": "raniabaccouche@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "56789012",
+      "motDePasse": "rania1234"
+    },
+    {
+      "id": "6",
+      "nom": "Mourad",
+      "prenom": "Hamadi",
+      "email": "mourad.hamadi@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "67890123",
+      "motDePasse": "mouradpass567"
+    },
+    {
+      "id": "7",
+      "nom": "Leila",
+      "prenom": "Mansouri",
+      "email": "leilamansouri@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "78901234",
+      "motDePasse": "leila7890"
+    },
+    {
+      "id": "8",
+      "nom": "Anis",
+      "prenom": "Mahfoudh",
+      "email": "anismahfoudh@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "89012345",
+      "motDePasse": "anis3210"
+    },
+    {
+      "id": "9",
+      "nom": "Sonia",
+      "prenom": "Radhouani",
+      "email": "soniaradhouani@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "90123456",
+      "motDePasse": "sonia6543"
+    },
+    {
+      "id": "10",
+      "nom": "Walid",
+      "prenom": "Hachicha",
+      "email": "walidhachicha@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "01234567",
+      "motDePasse": "walidpass890"
+    },
+    {
+      "id": "11",
+      "nom": "Salma",
+      "prenom": "Belaid",
+      "email": "salmabelaid@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "12345789",
+      "motDePasse": "salma0987"
+    },
+    {
+      "id": "12",
+      "nom": "Ahmed",
+      "prenom": "Fakhfakh",
+      "email": "ahmedfakhfakh@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "23456890",
+      "motDePasse": "ahmed1112"
+    },
+    {
+      "id": "13",
+      "nom": "Khaled",
+      "prenom": "Trabelsi",
+      "email": "khaledtrabelsi@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "34567901",
+      "motDePasse": "khaled1234"
+    },
+    {
+      "id": "14",
+      "nom": "Maya",
+      "prenom": "Boudhina",
+      "email": "mayaboudhina@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "45679012",
+      "motDePasse": "maya4321"
+    },
+    {
+      "id": "15",
+      "nom": "Omar",
+      "prenom": "Brahim",
+      "email": "omarbrahim@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "56790123",
+      "motDePasse": "omar8765"
+    },
+    {
+      "id": "16",
+      "nom": "Ines",
+      "prenom": "Chebbi",
+      "email": "ineschebbi@email.com",
+      "photo": "https://picsum.photos/400/?random",
+      "cin": "67891234",
+      "motDePasse": "ines1234"
+    },
+    {
+      "id": "eaf0",
+      "nom": "eya",
+      "prenom": "jribi",
+      "email": "eyaelgharbi8829@gmail.com",
+      "cin": "1234523",
+      "motDePasse": "122222222",
+      "photo": ""
+    }
+  ],
   "formateurs": [
-  {
-    "id": 1,
-    "nom": "Martin",
-    "prenom": "Pierre",
-    "email": "pierre.martin@example.com",
-    "telephone": "1234567890",
-    "cin": "12345678",
-    "photo": "pierre_martin.jpg",
-    "cv": "cv_pierre_martin.pdf",
-    "specialites": ["Développement Web", "JavaScript"]
-  },
-  {
-    "id": 2,
-    "nom": "Dubois",
-    "prenom": "Lucie",
-    "email": "lucie.dubois@example.com",
-    "telephone": "9876543210",
-    "cin": "23456789",
-    "photo": "lucie_dubois.jpg",
-    "cv": "cv_lucie_dubois.pdf",
-    "specialites": ["Angular", "React"]
-  },
-  {
-    "id": 3,
-    "nom": "Ben Ali",
-    "prenom": "Mehdi",
-    "email": "mehdi.benali@example.com",
-    "telephone": "5555555555",
-    "cin": "34567890",
-    "photo": "mehdi_benali.jpg",
-    "cv": "cv_mehdi_benali.pdf",
-    "specialites": ["Python", "Django"]
-  },
-  {
-    "id": 4,
-    "nom": "Jbeli",
-    "prenom": "Qayes",
-    "email": "jbei.ss@example.com",
-    "telephone": "22222222",
-    "cin": "45678901",
-    "photo": "qayes_jbeli.jpg",
-    "cv": "cv_qayes_jbeli.pdf",
-    "specialites": ["Python", "Java"]
-  }
-]
-,
+    {
+      "id": "1",
+      "nom": "Martin",
+      "prenom": "Pierre",
+      "email": "pierre.martin@example.com",
+      "telephone": "1234567890",
+      "cin": "12345678",
+      "photo": "pierre_martin.jpg",
+      "cv": "cv_pierre_martin.pdf",
+      "specialites": [
+        "Développement Web",
+        "JavaScript"
+      ]
+    },
+    {
+      "id": "2",
+      "nom": "Dubois",
+      "prenom": "Lucie",
+      "email": "lucie.dubois@example.com",
+      "telephone": "9876543210",
+      "cin": "23456789",
+      "photo": "lucie_dubois.jpg",
+      "cv": "cv_lucie_dubois.pdf",
+      "specialites": [
+        "Angular",
+        "React"
+      ]
+    },
+    {
+      "id": "3",
+      "nom": "Ben Ali",
+      "prenom": "Mehdi",
+      "email": "mehdi.benali@example.com",
+      "telephone": "5555555555",
+      "cin": "34567890",
+      "photo": "mehdi_benali.jpg",
+      "cv": "cv_mehdi_benali.pdf",
+      "specialites": [
+        "Python",
+        "Django"
+      ]
+    },
+    {
+      "id": "4",
+      "nom": "Jbeli",
+      "prenom": "Qayes",
+      "email": "jbei.ss@example.com",
+      "telephone": "22222222",
+      "cin": "45678901",
+      "photo": "qayes_jbeli.jpg",
+      "cv": "cv_qayes_jbeli.pdf",
+      "specialites": [
+        "Python",
+        "Java"
+      ]
+    }
+  ],
   "formations": [
     {
       "id": "1",
@@ -202,8 +220,15 @@
       "chargeHoraire": 30,
       "niveau": "Intermédiaire",
       "programme": "path/to/programme-angular.pdf",
-      "tags": ["Angular", "Développement Web"],
-      "categories": ["web", "mobile", "desktop"]
+      "tags": [
+        "Angular",
+        "Développement Web"
+      ],
+      "categories": [
+        "web",
+        "mobile",
+        "desktop"
+      ]
     },
     {
       "id": "2",
@@ -212,8 +237,14 @@
       "chargeHoraire": 20,
       "niveau": "Débutant",
       "programme": "path/to/programme-python.pdf",
-      "tags": ["Python", "Programmation"],
-      "categories": ["backend", "data science"]
+      "tags": [
+        "Python",
+        "Programmation"
+      ],
+      "categories": [
+        "backend",
+        "data science"
+      ]
     },
     {
       "id": "3",
@@ -222,8 +253,14 @@
       "chargeHoraire": 40,
       "niveau": "Avancé",
       "programme": "path/to/programme-fullstack.pdf",
-      "tags": ["Full-Stack", "Développement"],
-      "categories": ["web", "cloud"]
+      "tags": [
+        "Full-Stack",
+        "Développement"
+      ],
+      "categories": [
+        "web",
+        "cloud"
+      ]
     },
     {
       "id": "4",
@@ -232,8 +269,14 @@
       "chargeHoraire": 25,
       "niveau": "Intermédiaire",
       "programme": "path/to/programme-ml.pdf",
-      "tags": ["Machine Learning", "Data Science"],
-      "categories": ["data science", "AI"]
+      "tags": [
+        "Machine Learning",
+        "Data Science"
+      ],
+      "categories": [
+        "data science",
+        "AI"
+      ]
     },
     {
       "id": "5",
@@ -242,8 +285,14 @@
       "chargeHoraire": 15,
       "niveau": "Débutant",
       "programme": "path/to/programme-sql.pdf",
-      "tags": ["SQL", "Bases de données"],
-      "categories": ["backend", "data management"]
+      "tags": [
+        "SQL",
+        "Bases de données"
+      ],
+      "categories": [
+        "backend",
+        "data management"
+      ]
     },
     {
       "id": "6",
@@ -252,8 +301,13 @@
       "chargeHoraire": 35,
       "niveau": "Intermédiaire",
       "programme": "path/to/programme-flutter.pdf",
-      "tags": ["Flutter", "Mobile Development"],
-      "categories": ["mobile"]
+      "tags": [
+        "Flutter",
+        "Mobile Development"
+      ],
+      "categories": [
+        "mobile"
+      ]
     },
     {
       "id": "7",
@@ -262,8 +316,14 @@
       "chargeHoraire": 20,
       "niveau": "Débutant",
       "programme": "path/to/programme-cybersecurity.pdf",
-      "tags": ["Cybersécurité", "Sécurité"],
-      "categories": ["IT", "sécurité"]
+      "tags": [
+        "Cybersécurité",
+        "Sécurité"
+      ],
+      "categories": [
+        "IT",
+        "sécurité"
+      ]
     },
     {
       "id": "8",
@@ -272,8 +332,14 @@
       "chargeHoraire": 18,
       "niveau": "Débutant",
       "programme": "path/to/programme-uiux.pdf",
-      "tags": ["UI/UX", "Design"],
-      "categories": ["design", "web"]
+      "tags": [
+        "UI/UX",
+        "Design"
+      ],
+      "categories": [
+        "design",
+        "web"
+      ]
     },
     {
       "id": "9",
@@ -282,8 +348,14 @@
       "chargeHoraire": 25,
       "niveau": "Intermédiaire",
       "programme": "path/to/programme-java.pdf",
-      "tags": ["Java", "Programmation"],
-      "categories": ["backend", "applications"]
+      "tags": [
+        "Java",
+        "Programmation"
+      ],
+      "categories": [
+        "backend",
+        "applications"
+      ]
     },
     {
       "id": "10",
@@ -292,100 +364,166 @@
       "chargeHoraire": 30,
       "niveau": "Débutant",
       "programme": "path/to/programme-cloud.pdf",
-      "tags": ["Cloud", "AWS"],
-      "categories": ["cloud", "backend"]
+      "tags": [
+        "Cloud",
+        "AWS"
+      ],
+      "categories": [
+        "cloud",
+        "backend"
+      ]
     }
   ],
-    "sessions": [
-      {
-        "id": "1",
-        "formationId": "1",
-        "formateurIds": ["1"],
-        "dateDebut": "2025-01-10T09:00:00",
-        "dateFin": "2025-01-10T16:00:00",
-        "description": "Session de formation sur Angular",
-        "candidatsInscrits": ["1", "2","4","5","6","7","8","9","10","11","12","13","14","15","16","3"]
-      },
-      {
-        "id": "2",
-        "formationId": "1",
-        "formateurIds": ["1"],
-        "dateDebut": "2025-02-10T09:00:00",
-          "dateFin": "2025-02-10T16:00:00",
-        "description": "Deuxième session de formation sur Angular",
-       "candidatsInscrits": ["3", "4"]
-      },
-      {
-        "id": "3",
-        "formationId": "3",
-        "formateurIds": ["2", "1"],
-        "dateDebut": "2025-02-01T09:30:00",
-        "dateFin": "2025-02-01T16:30:00",
-        "description": "Session avancée sur React",
-        "candidatsInscrits": []
-      },
-      {
-        "id": "4",
-        "formationId": "4",
-        "formateurIds": ["1"],
-        "dateDebut": "2025-02-10T09:00:00",
-        "dateFin": "2025-02-10T16:00:00",
-        "description": "Session de formation sur Machine Learning",
-        "candidatsInscrits": ["1", "3"]
-      },
-      {
-        "id": "5",
-        "formationId": "5",
-        "formateurIds": ["3"],
-        "dateDebut": "2025-03-01T10:00:00",
-        "dateFin": "2025-03-01T17:00:00",
-        "description": "Formation sur SQL et bases de données",
-        "candidatsInscrits": []
-      },
-      {
-        "id": "6",
-        "formationId": "6",
-        "formateurIds": ["2"],
-        "dateDebut": "2025-03-05T09:00:00",
-        "dateFin": "2025-03-05T16:00:00",
-        "description": "Formation sur Flutter pour le développement mobile",
-        "candidatsInscrits": ["1", "2"]
-      },
-      {
-        "id": "7",
-        "formationId": "7",
-        "formateurIds": ["3"],
-        "dateDebut": "2025-04-10T10:00:00",
-        "dateFin": "2025-04-10T17:00:00",
-        "description": "Formation sur la Cybersécurité pour débutants",
-        "candidatsInscrits": ["4","2","1","3"]
-      },
-      {
-        "id": "8",
-        "formationId": "8",
-        "formateurIds": ["1"],
-        "dateDebut": "2025-04-20T09:00:00",
-        "dateFin": "2025-04-20T16:00:00",
-        "description": "Session sur UI/UX Design",
-        "candidatsInscrits": ["2", "3"]
-      },
-      {
-        "id": "9",
-        "formationId": "9",
-        "formateurIds": ["2"],
-        "dateDebut": "2025-05-01T09:00:00",
-        "dateFin": "2025-05-01T16:00:00",
-        "description": "Formation sur la Programmation Java",
-        "candidatsInscrits": ["1"]
-      },
-      {
-        "id": "10",
-        "formationId": "10",
-        "formateurIds": ["3"],
-        "dateDebut": "2025-06-15T10:00:00",
-        "dateFin": "2025-06-15T17:00:00",
-        "description": "Session sur le Cloud Computing et AWS",
-        "candidatsInscrits": []
-      }
-    ]
-  }
+  "sessions": [
+    {
+      "id": "1",
+      "formationId": "1",
+      "formateurIds": [
+        "1"
+      ],
+      "dateDebut": "2025-01-10T09:00:00",
+      "dateFin": "2025-01-10T16:00:00",
+      "description": "Session de formation sur Angular",
+      "candidatsInscrits": [
+        "1",
+        "2",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "3"
+      ]
+    },
+    {
+      "id": "2",
+      "formationId": "1",
+      "formateurIds": [
+        "1"
+      ],
+      "dateDebut": "2025-02-10T09:00:00",
+      "dateFin": "2025-02-10T16:00:00",
+      "description": "Deuxième session de formation sur Angular",
+      "candidatsInscrits": [
+        "3",
+        "4",
+        "13",
+        "14",
+        "16"
+      ]
+    },
+    {
+      "id": "3",
+      "formationId": "3",
+      "formateurIds": [
+        "2",
+        "1"
+      ],
+      "dateDebut": "2025-02-01T09:30:00",
+      "dateFin": "2025-02-01T16:30:00",
+      "description": "Session avancée sur React",
+      "candidatsInscrits": []
+    },
+    {
+      "id": "4",
+      "formationId": "4",
+      "formateurIds": [
+        "1"
+      ],
+      "dateDebut": "2025-02-10T09:00:00",
+      "dateFin": "2025-02-10T16:00:00",
+      "description": "Session de formation sur Machine Learning",
+      "candidatsInscrits": [
+        "1",
+        "3"
+      ]
+    },
+    {
+      "id": "5",
+      "formationId": "5",
+      "formateurIds": [
+        "3"
+      ],
+      "dateDebut": "2025-03-01T10:00:00",
+      "dateFin": "2025-03-01T17:00:00",
+      "description": "Formation sur SQL et bases de données",
+      "candidatsInscrits": []
+    },
+    {
+      "id": "6",
+      "formationId": "6",
+      "formateurIds": [
+        "2"
+      ],
+      "dateDebut": "2025-03-05T09:00:00",
+      "dateFin": "2025-03-05T16:00:00",
+      "description": "Formation sur Flutter pour le développement mobile",
+      "candidatsInscrits": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "7",
+      "formationId": "7",
+      "formateurIds": [
+        "3"
+      ],
+      "dateDebut": "2025-04-10T10:00:00",
+      "dateFin": "2025-04-10T17:00:00",
+      "description": "Formation sur la Cybersécurité pour débutants",
+      "candidatsInscrits": [
+        "4",
+        "2",
+        "1",
+        "3"
+      ]
+    },
+    {
+      "id": "8",
+      "formationId": "8",
+      "formateurIds": [
+        "1"
+      ],
+      "dateDebut": "2025-04-20T09:00:00",
+      "dateFin": "2025-04-20T16:00:00",
+      "description": "Session sur UI/UX Design",
+      "candidatsInscrits": [
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "9",
+      "formationId": "9",
+      "formateurIds": [
+        "2"
+      ],
+      "dateDebut": "2025-05-01T09:00:00",
+      "dateFin": "2025-05-01T16:00:00",
+      "description": "Formation sur la Programmation Java",
+      "candidatsInscrits": [
+        "1"
+      ]
+    },
+    {
+      "id": "10",
+      "formationId": "10",
+      "formateurIds": [
+        "3"
+      ],
+      "dateDebut": "2025-06-15T10:00:00",
+      "dateFin": "2025-06-15T17:00:00",
+      "description": "Session sur le Cloud Computing et AWS",
+      "candidatsInscrits": []
+    }
+  ]
+}

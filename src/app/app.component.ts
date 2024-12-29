@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './public/footer/footer.component';
 import { NavComponent } from './public/nav/nav.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
