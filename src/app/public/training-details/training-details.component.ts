@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { PublicService } from '../services/trainings/public.service';
+import { PublicService } from '../services/public/public.service';
 import { Trainings } from '../../models/trainings';
 import { ReactiveFormsModule } from '@angular/forms';
 

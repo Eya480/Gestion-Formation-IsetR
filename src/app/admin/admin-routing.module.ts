@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes,Router } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ManageFormationsComponent } from './manage-formations/manage-formations.component';
 import { ManageSessionComponent } from './manage-session/manage-session.component';

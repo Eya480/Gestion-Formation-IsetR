@@ -25,10 +25,9 @@ export class PublicService {
   }
   //
   getFormateursByIds(formateurIds: string[]): Observable<any[]> {
-    // Construct the query string with multiple 'id' parameters
     const formateurRequests = formateurIds.map(id => {
       const url = `${this.baseUrl}/formateurs?id=${id}`;
-      return this.http.get<any>(url); // Return an observable for each formateur
+      return this.http.get<any>(url); 
     });
   
     // Use forkJoin to wait for all the requests to complete
@@ -52,5 +51,6 @@ export class PublicService {
     return this.http.put<Session>(`${this.baseUrl}/sessions/${session.id}`, session);
   }
   
-  
+  //npx json-server --watch src/assets/db.json --port 3000
+
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PublicService } from '../services/trainings/public.service';
+import { PublicService } from '../services/public/public.service';
 
 @Component({
   selector: 'app-register',

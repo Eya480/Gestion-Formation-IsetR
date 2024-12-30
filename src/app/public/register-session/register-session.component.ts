@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Session } from '../../models/session';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PublicService } from '../services/trainings/public.service';
+import { PublicService } from '../services/public/public.service';
 
 @Component({
   selector: 'app-register-session',
@@ -73,7 +73,7 @@ export class RegisterSessionComponent {
             this.publicService.updateSession(this.session).subscribe({
               next: () => {
                 alert("Candidat inscrit avec succès.");
-                this.router.navigate(["/public/trainingDetails"]);
+                this.router.navigate(["/public/trainings"]);
               },
               error: (err) => {
                 console.error(err);

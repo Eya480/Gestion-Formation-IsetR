@@ -1,3 +1,8 @@
+@if (showPublicNavbar){
 <app-nav></app-nav>
+}
+@if (!showPublicNavbar){
+<app-nav-admin></app-nav-admin>
+}
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+<app-footer></app-footer><!--irban nord idara jahawiya-->

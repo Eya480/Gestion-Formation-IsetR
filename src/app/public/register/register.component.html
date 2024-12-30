@@ -64,7 +64,7 @@
                                           required
                                         >
                                         <label for="emailInput">*Adresse e-mail</label>
-                                        @if(registerForm.controls['email'].touched && (registerForm.controls['email'].invalid || registerForm.controls['email'].dirty)){
+                                        @if(registerForm.controls['email'].touched && registerForm.controls['email'].invalid){
                                             <span class="error">Email invalide</span>
                                         }
                                     </div>

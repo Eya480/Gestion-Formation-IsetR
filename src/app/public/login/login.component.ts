@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup,ReactiveFormsModule } from '@angular/forms';
-import { PublicService } from '../services/trainings/public.service';
+import { PublicService } from '../services/public/public.service';
 import { Router } from '@angular/router'; 
 @Component({
   selector: 'app-login',

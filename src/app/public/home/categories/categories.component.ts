@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { PublicService } from '../../services/trainings/public.service';
+import { PublicService } from '../../services/public/public.service';
 
 @Component({
   selector: 'app-categories',

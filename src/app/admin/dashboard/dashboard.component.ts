@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../services/admin.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,6 +8,33 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  totalCandidats: number = 0;
+  totalFormateurs: number = 0;
+  totalSessions: number = 0;
+  totalTrainings: number = 0;
 
+  constructor(private adminService: AdminService) {}
+
+  ngOnInit(): void {
+    // Récupérer le nombre de candidats
+    this.adminService.getCandidats().subscribe((data) => {
+      this.totalCandidats = data.length;
+    });
+
+    // Récupérer le nombre de formateurs
+    this.adminService.getFormateurs().subscribe((data) => {
+      this.totalFormateurs = data.length;
+    });
+
+    // Récupérer le nombre de sessions
+    this.adminService.getSessions().subscribe((data) => {
+      this.totalSessions = data.length;
+    });
+
+    // Récupérer le nombre de trainings
+    this.adminService.getTrainings().subscribe((data) => {
+      this.totalTrainings = data.length;
+    });
+  }
 }

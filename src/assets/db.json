@@ -152,6 +152,24 @@
       "cin": "1234523",
       "motDePasse": "122222222",
       "photo": ""
+    },
+    {
+      "id": "0661",
+      "nom": "aslan",
+      "prenom": "gharbi",
+      "email": "aslan8829@gmail.com",
+      "cin": "1234563",
+      "motDePasse": "1222222222",
+      "photo": ""
+    },
+    {
+      "id": "2b10",
+      "nom": "hedia",
+      "prenom": "gharbi",
+      "email": "hedia@gmail.com",
+      "cin": "12345632",
+      "motDePasse": "1222222zz222",
+      "photo": ""
     }
   ],
   "formateurs": [
@@ -430,7 +448,9 @@
       "dateDebut": "2025-02-01T09:30:00",
       "dateFin": "2025-02-01T16:30:00",
       "description": "Session avancée sur React",
-      "candidatsInscrits": []
+      "candidatsInscrits": [
+        "2b10"
+      ]
     },
     {
       "id": "4",
@@ -484,7 +504,8 @@
         "4",
         "2",
         "1",
-        "3"
+        "3",
+        "0661"
       ]
     },
     {
