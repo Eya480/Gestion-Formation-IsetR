@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../services/admin.service';
+import { SharedServiceService } from '../../shared/shared-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,7 @@ export class DashboardComponent implements OnInit {
   totalSessions: number = 0;
   totalTrainings: number = 0;
 
-  constructor(private adminService: AdminService) {}
+  constructor(private adminService: AdminService,private sharedService : SharedServiceService) {}
 
   ngOnInit(): void {
     // Récupérer le nombre de candidats
@@ -33,7 +34,7 @@ export class DashboardComponent implements OnInit {
     });
 
     // Récupérer le nombre de trainings
-    this.adminService.getTrainings().subscribe((data) => {
+    this.sharedService.getFormations().subscribe((data) => {
       this.totalTrainings = data.length;
     });
   }

@@ -1,0 +1,49 @@
+<div class="container mt-5" style="max-width: 100%; width: 95%;">
+  <!-- Header Section -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-secondary fw-bold">Gestion des Candidats</h2>
+    <a class="btn btn-primary shadow-sm d-flex align-items-center" routerLink="../addCandidat">
+      <i class="bi bi-plus-circle-fill me-2"></i> Ajouter un(e) candidat(e)
+    </a>
+  </div>
+
+  <!-- Table Section -->
+  <div class="table-responsive rounded shadow-sm">
+    <table class="table table-striped table-hover align-middle" style="min-width: 1200px;">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col" class="text-center">#</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Prénom</th>
+          <th scope="col">Email</th>
+          <th scope="col">Photo</th>
+          <th scope="col">Cin</th>
+          <th scope="col" class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Loop over candidats -->
+        @for (candidat of candidats; track candidat) {
+        <tr>
+          <th scope="row" class="text-center">{{ candidat.id }}</th>
+          <td>{{ candidat.nom }}</td>
+          <td>{{ candidat.prenom }}</td>
+          <td>{{ candidat.email }}</td>
+          <td>
+            <img [src]="candidat.photo" alt="Photo" width="50" class="rounded-circle">
+          </td>
+          <td>{{ candidat.cin }}</td>
+          <td class="text-center">
+            <a class="btn btn-outline-primary btn-sm ms-2" [routerLink]="['../','editCandidat', candidat.id]">
+              <i class="bi bi-pencil-square"></i> Éditer
+            </a>
+            <button class="btn btn-outline-danger btn-sm ms-2" (click)="deleteCandidat(candidat.id)">
+              <i class="bi bi-trash"></i> Supprimer
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { PublicService } from '../../services/public/public.service';
+import { SharedServiceService } from '../../../shared/shared-service.service';
 
 @Component({
   selector: 'app-categories',
@@ -14,11 +14,11 @@ export class CategoriesComponent implements OnInit {
   formations: any[] = [];
   categories: Set<string> = new Set();
 
-  constructor(private dataService: PublicService) {}
+  constructor(private sharedService:SharedServiceService) {}
 
   ngOnInit(): void {
     // Charger les formations
-    this.dataService.getFormations().subscribe((data) => {
+    this.sharedService.getFormations().subscribe((data) => {
       this.formations = data;
       // Extraire les catégories dynamiquement
       this.formations.forEach((formation) => {

@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Session } from '../../models/session';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PublicService } from '../services/public/public.service';
+import { SharedServiceService } from '../../shared/shared-service.service';
 
 @Component({
   selector: 'app-register-session',
@@ -11,7 +11,7 @@ import { PublicService } from '../services/public/public.service';
   templateUrl: './register-session.component.html',
   styleUrls: ['./register-session.component.css']
 })
-export class RegisterSessionComponent {
+export class RegisterSessionComponent implements OnInit {
   errorMessage: string = '';
   session!: Session;
   registerForm!: FormGroup;
@@ -20,7 +20,7 @@ export class RegisterSessionComponent {
     private router: Router,
     private route: ActivatedRoute,
     private fb: FormBuilder,
-    private publicService: PublicService
+    private sharedService: SharedServiceService
   ) {
     this.registerForm = this.fb.group({
       nom: [''],
@@ -30,47 +30,52 @@ export class RegisterSessionComponent {
   }
 
   ngOnInit(): void {
-    const sessionId = this.route.snapshot.paramMap.get('id');
-    if (sessionId) {
-      this.publicService.getSessionById(sessionId).subscribe((sessionData) => {
-        this.session = sessionData;
-      });
-    }
+    // Utilisation de this.route.params pour écouter les changements des paramètres
+    this.route.params.subscribe(params => {
+      const sessionId = params['id']; // Récupérer l'ID depuis l'URL
+      if (sessionId) {
+        this.sharedService.getSessionById(sessionId).subscribe((sessionData) => {
+          this.session = sessionData;
+        });
+      } else {
+        console.log('Aucun ID de session fourni dans l’URL.');
+      }
+    });
   }
 
   onSubmit(): void {
     const email = this.registerForm.value.email;
 
-    // Check if the session is already full
+    // Vérifier si la session est déjà complète
     if (this.session.candidatsInscrits.length >= 15) {
       this.errorMessage = "La session est déjà complète.";
       return;
     }
 
-    // Check if the candidate is already registered
-    this.publicService.getUserByEmail(email).subscribe({
+    // Vérifier si le candidat est déjà inscrit
+    this.sharedService.getUserByEmail(email).subscribe({
       next: (candidates) => {
         if (candidates.length === 0) {
           alert("Aucun candidat trouvé avec cet email. Veuillez vous inscrire d'abord.");
           this.router.navigate(['public/register']);
         } else {
-          const candidate = candidates[0]; // Assuming one candidate with that email
-          // Check if candidate.id is defined
-         if (!candidate.id) {
-          this.errorMessage = "Identifiant de candidat manquant.";
-          return;
-      }
+          const candidate = candidates[0]; // Supposons qu'il y ait un seul candidat avec cet email
 
-      const candidateId: string = candidate.id;  // Now safe to assign since we checked for undefined
+          // Vérification si `candidate.id` est défini
+          if (!candidate.id) {
+            this.errorMessage = "Identifiant de candidat manquant.";
+            return;
+          }
 
+          const candidateId: string = candidate.id; // Maintenant sûr d'assigner
 
-          // If the candidate is already registered, show an error
+          // Si le candidat est déjà inscrit, afficher une erreur
           if (this.session.candidatsInscrits.includes(candidateId)) {
             this.errorMessage = "Vous êtes déjà inscrit à cette session.";
           } else {
-            // Add the candidate to the session
+            // Ajouter le candidat à la session
             this.session.candidatsInscrits.push(candidateId);
-            this.publicService.updateSession(this.session).subscribe({
+            this.sharedService.updateSession(this.session).subscribe({
               next: () => {
                 alert("Candidat inscrit avec succès.");
                 this.router.navigate(["/public/trainings"]);

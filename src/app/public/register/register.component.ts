@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { PublicService } from '../services/public/public.service';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { Router } from '@angular/router';
+import { SharedServiceService } from '../../shared/shared-service.service';
 
 @Component({
   selector: 'app-register',
@@ -13,12 +13,11 @@ import { PublicService } from '../services/public/public.service';
 export class RegisterComponent {
   registerForm!: FormGroup;
   errorMessage: string = '';
-  photo!: File;
 
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    private candidateService: PublicService
+    private sharedService: SharedServiceService
   ) {
     this.registerForm = this.fb.group({
       nom: [''],
@@ -29,21 +28,17 @@ export class RegisterComponent {
       photo: [''] 
     });
   }
-  
-  ngOnInit(): void {
-    // Vous pouvez y ajouter des logiques d'initialisation si nécessaire
-  }
 
   onSubmit(): void {
     const candidateData = this.registerForm.value;
-    this.candidateService.getUserByEmail(candidateData.email).subscribe({
+    this.sharedService.getUserByEmail(candidateData.email).subscribe({
       next: (existingCandidates) => {
         if (existingCandidates.length > 0) {
           // Email déjà utilisé
           this.errorMessage = 'Cet email est déjà utilisé';
         } else {
           // Email non utilisé, continuer l'enregistrement
-          this.candidateService.addcandidate(candidateData).subscribe({
+          this.sharedService.addcandidate(candidateData).subscribe({
             next: () => {
               alert('Inscription réussie !');
               this.router.navigate(['/public/login']); 

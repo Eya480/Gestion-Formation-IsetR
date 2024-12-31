@@ -1,0 +1,66 @@
+<div class="container mt-5" style="max-width: 100%; width: 95%;">
+    <!-- Header Section -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="text-secondary fw-bold">Gestion des Formations</h2>
+      <a class="btn btn-primary shadow-sm d-flex align-items-center" routerLink="../addTraining">
+        <i class="bi bi-plus-circle-fill me-2"></i> Ajouter une Formation
+      </a>
+    </div>
+  
+    <!-- Table Section -->
+    <div class="table-responsive rounded shadow-sm">
+      <table class="table table-striped table-hover align-middle" style="min-width: 1200px;">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col" class="text-center">#</th>
+            <th scope="col">Titre</th>
+            <th scope="col" class="d-none d-lg-table-cell">Description</th>
+            <th scope="col" >Durée</th>
+            <th scope="col">Niveau</th>
+            <th scope="col">Programme</th>
+            <th scope="col" class="d-none d-md-table-cell">Catégories</th>
+            <th scope="col" class="d-none d-md-table-cell">Tags</th>
+            <th scope="col" class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Loop over formations -->
+          @for (formation of formations; track formation) {
+          <tr>
+            <th scope="row" class="text-center">{{ formation.id }}</th>
+            <td>{{ formation.titre }}</td>
+            <td class="d-none d-lg-table-cell" style="white-space: normal;">{{ formation.description }}</td>
+            <td>{{ formation.chargeHoraire }}</td>
+            <td>
+              {{ formation.niveau }}
+            </td>
+            <td>
+              <a href="{{ formation.programme }}" target="_blank" class="btn btn-link text-primary p-0">
+                <i class="bi bi-file-earmark-text"></i> Voir Programme
+              </a>
+            </td>
+            <td class="d-none d-md-table-cell">
+              @for (category of formation.categories; track category) {
+              <span class="badge bg-primary text-white me-1">{{ category }}</span>
+              }
+            </td>
+            <td class="d-none d-md-table-cell">
+              @for (tag of formation.tags; track tag) {
+              <span class="badge bg-dark text-light me-1">{{ tag }}</span>
+              }
+            </td>
+            <td class="text-center">
+              <a class="btn btn-outline-primary btn-sm ms-2" [routerLink]="['../editTraining', formation.id]">
+                <i class="bi bi-pencil-square"></i> Éditer
+              </a>
+              <button class="btn btn-outline-danger btn-sm ms-2" (click)="deleteFormation(formation.id)" title="Supprimer">
+                <i class="bi bi-trash"></i> Supprimer
+              </button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

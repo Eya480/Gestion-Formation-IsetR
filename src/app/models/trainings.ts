@@ -1,5 +1,5 @@
 export interface Trainings {
-  id: number;
+  id: string;
   titre: string;
   description: string;
   chargeHoraire: number;

@@ -1,24 +1,6 @@
 {
   "candidats": [
     {
-      "id": "1",
-      "nom": "Khawla",
-      "prenom": "Zribi",
-      "email": "zribikh@email.com",
-      "photo": "https://picsum.photos/400/?random",
-      "cin": "12345678",
-      "motDePasse": "password123"
-    },
-    {
-      "id": "2",
-      "nom": "Hedi",
-      "prenom": "Joui",
-      "email": "jouihz@email.com",
-      "photo": "https://picsum.photos/400/?random",
-      "cin": "23456789",
-      "motDePasse": "password321"
-    },
-    {
       "id": "3",
       "nom": "Amina",
       "prenom": "Ben Salem",
@@ -145,30 +127,21 @@
       "motDePasse": "ines1234"
     },
     {
-      "id": "eaf0",
-      "nom": "eya",
-      "prenom": "jribi",
-      "email": "eyaelgharbi8829@gmail.com",
-      "cin": "1234523",
-      "motDePasse": "122222222",
+      "id": "b6f1",
+      "nom": "sami",
+      "prenom": "gharbi",
+      "email": "khlila@gmail.com",
+      "cin": "1221321",
+      "motDePasse": "2222222222222222",
       "photo": ""
     },
     {
-      "id": "0661",
-      "nom": "aslan",
+      "id": "718a",
+      "nom": "sofien",
       "prenom": "gharbi",
-      "email": "aslan8829@gmail.com",
-      "cin": "1234563",
-      "motDePasse": "1222222222",
-      "photo": ""
-    },
-    {
-      "id": "2b10",
-      "nom": "hedia",
-      "prenom": "gharbi",
-      "email": "hedia@gmail.com",
-      "cin": "12345632",
-      "motDePasse": "1222222zz222",
+      "email": "SOFIEN@gmail.com",
+      "cin": "1221321",
+      "motDePasse": "2222222222222222",
       "photo": ""
     }
   ],
@@ -532,7 +505,8 @@
       "dateFin": "2025-05-01T16:00:00",
       "description": "Formation sur la Programmation Java",
       "candidatsInscrits": [
-        "1"
+        "1",
+        "2b10"
       ]
     },
     {

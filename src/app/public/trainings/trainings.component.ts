@@ -1,10 +1,10 @@
 import {Component,OnInit,signal,WritableSignal//trainingsArr est automatiquement mise à jour,
 } from '@angular/core';
-import { PublicService } from '../services/public/public.service';
 import { Trainings } from '../../models/trainings';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { map,startWith } from 'rxjs';
 import { RouterModule } from '@angular/router'; 
+import { SharedServiceService } from '../../shared/shared-service.service';
 
 @Component({
   selector: 'app-trainings',
@@ -18,14 +18,14 @@ export class TrainingsComponent implements OnInit {
   originalTrainingArr: Trainings[] = [];//les formations
   trainingsForm!: FormGroup;
 
-  constructor(private trainingService: PublicService,private fb: FormBuilder) {
+  constructor(private sharedService: SharedServiceService,private fb: FormBuilder) {
     this.trainingsForm = this.fb.group({
     searchInput: [''],
     });
   }
 
   ngOnInit(): void {
-    this.trainingService.getFormations().subscribe({
+    this.sharedService.getFormations().subscribe({
       next: (trainings: Trainings[]) => {
         //console.log(trainings);
         this.originalTrainingArr = trainings;

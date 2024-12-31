@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup,ReactiveFormsModule } from '@angular/forms';
-import { PublicService } from '../services/public/public.service';
 import { Router } from '@angular/router'; 
+import { SharedServiceService } from '../../shared/shared-service.service';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   login!: FormGroup;
   errorMessage: string = ''; 
-  constructor(private fb:FormBuilder,private candidateService : PublicService,private router: Router){
+  constructor(private fb:FormBuilder,
+    private sharedService : SharedServiceService,private router: Router){
      // Initialisation du formulaire
      this.login = this.fb.group({
       email: [''],
@@ -20,7 +21,7 @@ export class LoginComponent {
     });
   }
   loginCandidate(login: FormGroup) {
-    this.candidateService.getUserByEmail(login.value.email).subscribe({
+    this.sharedService.getUserByEmail(login.value.email).subscribe({
       next: (candidates) => {
         const candidate = candidates[0];
         if (candidate) {

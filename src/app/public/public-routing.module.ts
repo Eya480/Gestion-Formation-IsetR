@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'registerSession/:id', component: RegisterSessionComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  {path:'trainingDetails/:id', component: TrainingDetailsComponent}
+  {path:'trainingDetails/:id', component: TrainingDetailsComponent},
+  {path:'trainingDetails', component: TrainingDetailsComponent}
 ];
 
 @NgModule({
