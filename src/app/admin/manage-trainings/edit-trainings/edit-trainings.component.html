@@ -1,1 +1,138 @@
-<p>edit-trainings works!</p>
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card shadow-lg" style="border-radius: 1rem; backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.8);">
+          <div class="row g-0">
+            <!-- Image Section -->
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img
+                src="../../../../assets/isett.jpg"
+                alt="Edit Training"
+                class="img-fluid"
+                style="border-radius: 1rem 0 0 1rem; object-fit: cover; height: 100%; filter: blur(1px) brightness(0.7) contrast(1.2) saturate(2);"
+              />
+            </div>
+            <!-- Form Section -->
+            <div class="col-md-7">
+              <div class="card-body p-5 d-flex flex-column justify-content-center">
+                <h2 class="text-center fw-bold mb-4">Editer la formation <br><u> {{training.titre}}</u></h2>
+                <form id="EditForm" (ngSubmit)="editTraining(f)" #f="ngForm">
+                  <!-- Titre -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      name="titre"
+                      id="titreInput"
+                      ngModel
+                      #titre="ngModel"
+                      class="form-control"
+                      placeholder="Titre"
+                      [(ngModel)]="training.titre"
+                      required
+                    />
+                    <label for="titreInput">*Titre</label>
+                    @if(titre.touched && titre.invalid) {
+                      <span class="text-danger">Ce champ est obligatoire.</span>
+                    }
+                  </div>
+  
+                  <!-- Description -->
+                  <div class="form-floating mb-3">
+                    <textarea
+                      name="description"
+                      id="descriptionInput"
+                      ngModel
+                      #description="ngModel"
+                      class="form-control"
+                      placeholder="Description"
+                      [(ngModel)]="training.description"
+                      style="height: 120px;"
+                      required
+                    ></textarea>
+                    <label for="descriptionInput">*Description</label>
+                    @if(description.touched && description.invalid) {
+                      <span class="text-danger">Ce champ est obligatoire.</span>
+                    }
+                  </div>
+  
+                  <!-- Charge Horaire -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="number"
+                      name="chargeHoraire"
+                      id="chargeHoraireInput"
+                      ngModel
+                      #chargeHoraire="ngModel"
+                      class="form-control"
+                      placeholder="Charge Horaire"
+                      [(ngModel)]="training.chargeHoraire"
+                      required
+                    />
+                    <label for="chargeHoraireInput">*Charge Horaire</label>
+                    @if(chargeHoraire.touched && chargeHoraire.invalid) {
+                      <span class="text-danger">Ce champ est obligatoire.</span>
+                    }
+                  </div>
+  
+                  <!-- Niveau (Select) -->
+                 <div class="form-floating mb-3">
+                 <select
+                    name="niveau"
+                    id="niveauInput"
+                    ngModel
+                    #niveau="ngModel"
+                    class="form-control"
+                    [(ngModel)]="training.niveau"
+                    required
+                      >
+                    <option value="" disabled selected>Choisissez un niveau</option>
+                    <option value="Débutant">Débutant</option>
+                    <option value="Intermédiaire">Intermédiaire</option>
+                    <option value="Avancé">Avancé</option>
+                     </select>
+                    <label for="niveauInput">*Niveau</label>
+                  </div>
+  
+                  <!-- Programme (URL PDF) -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="url"
+                      name="programme"
+                      id="programmeInput"
+                      ngModel
+                      #programme="ngModel"
+                      class="form-control"
+                      placeholder="Programme (URL PDF)"
+                      [(ngModel)]="training.programme"
+                      required
+                    />
+                    <label for="programmeInput">*Programme (URL PDF)</label>
+                    @if(programme.touched && programme.invalid) {
+                      <span class="text-danger">
+                        Ce champ est obligatoire.
+                      </span>
+                    }
+                  </div>
+  
+                  <!-- Error Message -->
+                  @if(errorMessage) {
+                    <div class="alert alert-danger mt-3">
+                      {{ errorMessage }}
+                    </div>
+                  }
+  
+                  <!-- Edit Button -->
+                  <div class="d-grid mb-4">
+                    <button type="submit" class="btn btn-primary btn-lg" [disabled]="f.invalid">
+                      Edit Training
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

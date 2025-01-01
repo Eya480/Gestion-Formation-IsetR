@@ -136,11 +136,11 @@
       "photo": ""
     },
     {
-      "id": "718a",
-      "nom": "sofien",
+      "id": "5c3e",
+      "nom": "eyasssss",
       "prenom": "gharbi",
       "email": "SOFIEN@gmail.com",
-      "cin": "1221321",
+      "cin": "123s4563",
       "motDePasse": "2222222222222222",
       "photo": ""
     }
@@ -153,7 +153,7 @@
       "email": "pierre.martin@example.com",
       "telephone": "1234567890",
       "cin": "12345678",
-      "photo": "pierre_martin.jpg",
+      "photo": "https://picsum.photos/400/?11",
       "cv": "cv_pierre_martin.pdf",
       "specialites": [
         "Développement Web",
@@ -167,7 +167,7 @@
       "email": "lucie.dubois@example.com",
       "telephone": "9876543210",
       "cin": "23456789",
-      "photo": "lucie_dubois.jpg",
+      "photo": "https://picsum.photos/400/?9",
       "cv": "cv_lucie_dubois.pdf",
       "specialites": [
         "Angular",
@@ -181,7 +181,7 @@
       "email": "mehdi.benali@example.com",
       "telephone": "5555555555",
       "cin": "34567890",
-      "photo": "mehdi_benali.jpg",
+      "photo": "https://picsum.photos/400/?4",
       "cv": "cv_mehdi_benali.pdf",
       "specialites": [
         "Python",
@@ -195,7 +195,7 @@
       "email": "jbei.ss@example.com",
       "telephone": "22222222",
       "cin": "45678901",
-      "photo": "qayes_jbeli.jpg",
+      "photo": "https://picsum.photos/400/?1",
       "cv": "cv_qayes_jbeli.pdf",
       "specialites": [
         "Python",
@@ -208,7 +208,7 @@
       "id": "1",
       "titre": "Formation Angular",
       "description": "Apprendre Angular pour le développement web",
-      "chargeHoraire": 30,
+      "chargeHoraire": 45,
       "niveau": "Intermédiaire",
       "programme": "path/to/programme-angular.pdf",
       "tags": [
@@ -224,9 +224,9 @@
     {
       "id": "2",
       "titre": "Introduction à Python",
-      "description": "Les bases de la programmation avec Python",
+      "description": "Les bases de la programmation avec python",
       "chargeHoraire": 20,
-      "niveau": "Débutant",
+      "niveau": "Intermédiaire",
       "programme": "path/to/programme-python.pdf",
       "tags": [
         "Python",
@@ -320,7 +320,7 @@
       "id": "8",
       "titre": "UI/UX Design",
       "description": "Créer des interfaces utilisateur attractives et ergonomiques",
-      "chargeHoraire": 18,
+      "chargeHoraire": 20,
       "niveau": "Débutant",
       "programme": "path/to/programme-uiux.pdf",
       "tags": [

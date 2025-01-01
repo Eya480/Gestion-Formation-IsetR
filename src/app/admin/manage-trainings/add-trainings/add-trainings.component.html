@@ -1,1 +1,141 @@
-<p>add-trainings works!</p>
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card shadow-lg" style="border-radius: 1rem; backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.8);">
+          <div class="row g-0">
+            <!-- Image Section -->
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="../../../../assets/isett.jpg" 
+                   alt="Formulaire d'ajout de formation" 
+                   class="img-fluid" 
+                   style="border-radius: 1rem 0 0 1rem; object-fit: cover; height: 100%; filter: blur(1px) brightness(0.7) contrast(1.2) saturate(2);" />
+            </div>
+            
+            <!-- Form Section -->
+            <div class="col-md-7">
+              <div class="card-body p-5 d-flex flex-column justify-content-center">
+                <h2 class="text-center fw-bold mb-4">Ajouter une Formation</h2>
+                
+                <form [formGroup]="AddTrainingForm"  (ngSubmit)="onSubmit()">
+                  <!-- Titre -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="text" 
+                      id="titreInput" 
+                      formControlName="titre" 
+                      class="form-control" 
+                      placeholder="Titre de la formation" 
+                      required>
+                    <label for="titreInput">*Titre</label>
+                    @if(AddTrainingForm.controls['titre'].touched && AddTrainingForm.controls['titre'].invalid){
+                      <span class="error">Ce champ est obligatoire!</span>
+                    }
+                  </div>
+  
+                  <!-- Description -->
+                  <div class="form-floating mb-3">
+                    <textarea 
+                      id="descriptionInput" 
+                      formControlName="description" 
+                      class="form-control" 
+                      placeholder="Description de la formation" 
+                      style="height: 120px;" 
+                      required></textarea>
+                    <label for="descriptionInput">*Description</label>
+                    @if(AddTrainingForm.controls['description'].touched && AddTrainingForm.controls['description'].invalid){
+                      <span class="error">Ce champ est obligatoire!</span>
+                    }
+                  </div>
+  
+                  <!-- Durée -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="number" 
+                      id="dureeInput" 
+                      formControlName="chargeHoraire" 
+                      class="form-control" 
+                      placeholder="Durée en heures" 
+                      required>
+                    <label for="dureeInput">*Durée (heures)</label>
+                    @if(AddTrainingForm.controls['chargeHoraire'].touched && AddTrainingForm.controls['chargeHoraire'].invalid){
+                      <span class="error">Ce champ est obligatoire!</span>
+                    }
+                  </div>
+  
+                  <!-- Niveau -->
+                  <div class="form-floating mb-3">
+                    <select 
+                      id="niveauSelect" 
+                      formControlName="niveau" 
+                      class="form-select" 
+                      required
+                      >
+                      <option value="" disabled selected>Choisir un niveau</option>
+                      <option value="Débutant">Débutant</option>
+                      <option value="Intermédiaire">Intermédiaire</option>
+                      <option value="Avancé">Avancé</option>
+                    </select>
+                    <label for="niveauSelect">*Niveau</label>
+                  </div>
+  
+                  <!-- Programme -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="text" 
+                      id="programmeInput" 
+                      required
+                      formControlName="programme" 
+                      class="form-control" 
+                      placeholder="Lien du programme">
+                    <label for="programmeInput">*Programme (lien URL)</label>
+                    @if(AddTrainingForm.controls['programme'].touched && AddTrainingForm.controls['programme'].invalid){
+                      <span class="error">Lien invalide</span>
+                    }
+                  </div>
+  
+                  <!-- Catégories -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="text" 
+                      id="categoriesInput" 
+                      formControlName="categories" 
+                      class="form-control" 
+                      placeholder="Catégories (séparées par des virgules)">
+                    <label for="categoriesInput">Catégories (séparées par des virgules)</label>
+                  </div>
+  
+                  <!-- Tags -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="text" 
+                      id="tagsInput" 
+                      formControlName="tags" 
+                      required
+                      class="form-control" 
+                      placeholder="Tags (séparés par des virgules)"
+                      >
+                    <label for="tagsInput">*Tags (séparés par des virgules)</label>
+                  </div>
+  
+                  <!-- Error Message -->
+                  @if(errorMessage){
+                    <div class="alert alert-danger mt-3" [innerHTML]="errorMessage">
+                      {{ errorMessage }}
+                    </div>
+                  }
+  
+                  <!-- Submit Button -->
+                  <div class="d-grid mb-4">
+                    <button type="submit" class="btn btn-primary btn-lg" [disabled]="AddTrainingForm.invalid">
+                      Ajouter
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Candidate } from '../../models/candidate';
 import { Session } from '../../models/session';
 import { Trainings } from '../../models/trainings';
+import { Trainer } from '../../models/trainer';
 
 @Injectable({
   providedIn: 'root'
@@ -28,8 +29,8 @@ export class AdminService {
     return this.http.delete<void>(`${this.baseURL}/candidats/${id}`);
   }
 
-  getFormateurs(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseURL}/formateurs`);
+  getFormateurs(): Observable<Trainer[]> {
+    return this.http.get<Trainer[]>(`${this.baseURL}/formateurs`);
   }
 
   getSessions(): Observable<Session[]> {
@@ -43,5 +44,23 @@ export class AdminService {
   deleteFormation(id: string): Observable<void> {
     return this.http.delete<void>(`${this.baseURL}/formations/${id}`);
   }
+  addTraining(trainingData: Trainings): Observable<any> {
+    return this.http.post( `${this.baseURL}/formations`, trainingData);
+  }
+  getTrainingByTitre(titre: string): Observable<Trainings[]> {
+    return this.http.get<Trainings[]>(`${this.baseURL}/formations?titre=${titre}`);
+  }
+  //trainer
+  updateFormateur(id: string, f: Trainer): Observable<Trainer> {
+    return this.http.put<Trainer>(`${this.baseURL}/formateurs/${id}`, f);
+  }
+
+  deleteFormateur(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.baseURL}/formateurs/${id}`);
+  }
+  addTrainer(trainerData: Trainer): Observable<any> {
+    return this.http.post( `${this.baseURL}/formateurs`, trainerData);
+  }
+  
 
 }

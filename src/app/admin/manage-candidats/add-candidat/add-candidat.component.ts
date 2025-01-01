@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup,ReactiveFormsModule } from '@angular/forms';
-import { AdminModule } from '../../admin.module';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup,FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SharedServiceService } from '../../../shared/shared-service.service';
 
 @Component({
   selector: 'app-add-candidat',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,FormsModule],
   templateUrl: './add-candidat.component.html',
   styleUrl: './add-candidat.component.css'
 })
@@ -18,7 +17,6 @@ export class AddCandidatComponent{
   constructor(
       private router: Router,
       private fb: FormBuilder,
-      private adminService: AdminModule,
       private sharedService: SharedServiceService
     ) {
       this.AddForm = this.fb.group({
@@ -27,11 +25,13 @@ export class AddCandidatComponent{
         email: [''],
         cin: [''],
         motDePasse: [''],
-        photo: [''] 
+        photo: ['']
       });
     }
 
     onSubmit(): void {
+
+  
       const candidateData = this.AddForm.value;
       this.sharedService.getUserByEmail(candidateData.email).subscribe(
         {

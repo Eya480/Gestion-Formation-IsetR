@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { SharedServiceService } from '../../shared/shared-service.service';
 
@@ -23,13 +23,17 @@ export class RegisterComponent {
       nom: [''],
       prenom: [''],
       email: [''],
-      cin: [''],
+      cin: ['',],
       motDePasse: [''],
-      photo: [''] 
+      photo: ['']
     });
-  }
-
-  onSubmit(): void {
+          }
+      
+    onSubmit(): void {
+        if (this.registerForm.invalid) {
+          this.errorMessage = 'Veuillez remplir tous les champs obligatoires correctement.';
+          return;
+      }
     const candidateData = this.registerForm.value;
     this.sharedService.getUserByEmail(candidateData.email).subscribe({
       next: (existingCandidates) => {
@@ -50,7 +54,7 @@ export class RegisterComponent {
           });
         }
       },
-      error: (err) => {
+      error: () => {
         this.errorMessage = 'Impossible de vérifier l\'email. Veuillez réessayer.';
         //console.error(err);
       }
