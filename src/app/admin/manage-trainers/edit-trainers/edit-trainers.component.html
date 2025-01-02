@@ -1,1 +1,192 @@
-<p>edit-trainers works!</p>
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card shadow-lg" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <!-- Image Section -->
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img
+                  src="../../../../assets/isett.jpg"
+                  alt="Edit Training"
+                  class="img-fluid"
+                  style="border-radius: 1rem 0 0 1rem; object-fit: cover; height: 100%; filter: blur(1px) brightness(0.7) contrast(1.2) saturate(2);"
+                />
+              </div>
+            <!-- Form Section -->
+            <div class="col-md-7">
+              <div class="card-body p-5 d-flex flex-column justify-content-center">
+                <h2 class="text-center fw-bold mb-4">Editer le formateur <br><u>{{trainer.nom}} {{trainer.prenom}}</u></h2>
+                <form id="EditForm" (ngSubmit)="editTrainer(f)" #f="ngForm">
+  
+                  <!-- Nom -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      name="nom"
+                      id="nomInput"
+                      ngModel
+                      #nom="ngModel"
+                      class="form-control"
+                      placeholder="Nom"
+                      [(ngModel)]="trainer.nom"
+                      required
+                    />
+                    <label for="nomInput">*Nom</label>
+                    @if(nom.touched && nom.invalid){
+                      <span class="text-danger">Ce champ est obligatoire.</span>}
+                  </div>
+  
+                  <!-- Prénom -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      name="prenom"
+                      id="prenomInput"
+                      ngModel
+                      #prenom="ngModel"
+                      class="form-control"
+                      placeholder="Prénom"
+                      [(ngModel)]="trainer.prenom"
+                      required
+                    />
+                    <label for="prenomInput">*Prénom</label>
+                    @if(prenom.touched && prenom.invalid){
+                      <span class="text-danger">Ce champ est obligatoire.</span>
+                    }
+                  </div>
+  
+                  <!-- Email -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="email"
+                      name="email"
+                      id="emailInput"
+                      ngModel
+                      #email="ngModel"
+                      class="form-control"
+                      placeholder="Email"
+                      [(ngModel)]="trainer.email"
+                      required
+                    />
+                    <label for="emailInput">*Email</label>
+                    @if(email.touched && email.invalid){
+                      <span class="text-danger">Ce champ est obligatoire.</span>
+                    }
+                  </div>
+  
+                  <!-- Téléphone -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      name="telephone"
+                      id="telephoneInput"
+                      ngModel
+                      #telephone="ngModel"
+                      class="form-control"
+                      placeholder="Téléphone"
+                      [(ngModel)]="trainer.telephone"
+                      required
+                    />
+                    <label for="telephoneInput">*Téléphone</label>
+                    @if(telephone.touched && telephone.invalid){
+                      <span class="text-danger">Ce champ est obligatoire.</span>}
+                  </div>
+  
+                  <!-- CIN -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      name="cin"
+                      id="cinInput"
+                      ngModel
+                      #cin="ngModel"
+                      class="form-control"
+                      placeholder="CIN"
+                      [(ngModel)]="trainer.cin"
+                      required
+                    />
+                    <label for="cinInput">*CIN</label>
+                    @if(cin.touched && cin.invalid){
+                      <span class="text-danger">Ce champ est obligatoire.</span>}
+                  </div>
+  
+                  <!-- Photo -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="url"
+                      name="photo"
+                      id="photoInput"
+                      ngModel
+                      #photo="ngModel"
+                      class="form-control"
+                      placeholder="Photo URL"
+                      [(ngModel)]="trainer.photo"
+                      required
+                    />
+                    <label for="photoInput">*Photo (URL)</label>
+                    @if(photo.touched && photo.invalid){
+                      <span class="text-danger">Ce champ est obligatoire.</span>
+                    }
+                  </div>
+  
+                  <!-- CV -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="url"
+                      name="cv"
+                      id="cvInput"
+                      ngModel
+                      #cv="ngModel"
+                      class="form-control"
+                      placeholder="CV URL"
+                      [(ngModel)]="trainer.cv"
+                      required
+                    />
+                    <label for="cvInput">*CV (URL)</label>
+                    @if(cv.touched && cv.invalid){
+                      <span class="text-danger">Ce champ est obligatoire.</span>
+}                  </div>
+  
+                 <!-- Liste des spécialités sélectionnées -->
+               <div class="mb-4">
+              <h5>Spécialités sélectionnées :</h5>
+              <ul class="list-group">
+              <li *ngFor="let specialite of trainer.specialites; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
+            {{ specialite }}
+                <button (click)="removeSpecialite(i)" class="btn btn-danger btn-sm">
+                 Supprimer
+                  </button>
+                 </li>
+                 </ul>
+               </div>
+  
+                <!-- Ajouter une spécialité -->
+                <div class="mb-4">
+                <button (click)="addSpecialite($event)" class="btn btn-outline-primary">
+                             Ajouter une spécialité
+                </button>
+              </div>
+  
+                  <!-- Error Message -->
+                   @if(errorMessage){
+                    <div class="alert alert-danger mt-3">
+                      {{ errorMessage }}
+                    </div>
+                }
+  
+                  <!-- Edit Button -->
+                  <div class="d-grid mb-4">
+                    <button type="submit" class="btn btn-primary btn-lg" [disabled]="f.invalid">
+                      Editer le formateur
+                    </button>
+                  </div>
+  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

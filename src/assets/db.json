@@ -363,6 +363,21 @@
         "cloud",
         "backend"
       ]
+    },
+    {
+      "id": "c264",
+      "titre": "Formation Angularqq",
+      "description": "qqqqqqqqqqqqq",
+      "chargeHoraire": 22,
+      "niveau": "Intermédiaire",
+      "programme": "path/to/programme-angular.pdf",
+      "categories": [
+        "web"
+      ],
+      "tags": [
+        "pc",
+        "web"
+      ]
     }
   ],
   "sessions": [

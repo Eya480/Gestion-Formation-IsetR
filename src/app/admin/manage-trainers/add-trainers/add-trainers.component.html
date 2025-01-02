@@ -1,1 +1,161 @@
-<p>add-trainers works!</p>
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card shadow-lg" style="border-radius: 1rem; backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.8);">
+          <div class="row g-0">
+            <!-- Image Section -->
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="../../../../assets/isett.jpg" 
+                   alt="Formulaire d'ajout de formateur" 
+                   class="img-fluid" 
+                   style="border-radius: 1rem 0 0 1rem; object-fit: cover; height: 100%; filter: blur(1px) brightness(0.7) contrast(1.2) saturate(2);" />
+            </div>
+            
+            <!-- Form Section -->
+            <div class="col-md-7">
+              <div class="card-body p-5 d-flex flex-column justify-content-center">
+                <h2 class="text-center fw-bold mb-4">Ajouter un Formateur</h2>
+                
+                <form [formGroup]="AddTrainerForm" (ngSubmit)="onSubmit()">
+                  <!-- Nom -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="text" 
+                      id="nomInput" 
+                      formControlName="nom" 
+                      class="form-control" 
+                      placeholder="Nom du formateur" 
+                      required>
+                    <label for="nomInput">*Nom</label>
+                    @if(AddTrainerForm.controls['nom'].touched && AddTrainerForm.controls['nom'].invalid){
+                        <span class="error">Ce champ est obligatoire</span>
+                      }
+                  </div>
+  
+                  <!-- Prénom -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="text" 
+                      id="prenomInput" 
+                      formControlName="prenom" 
+                      class="form-control" 
+                      placeholder="Prénom du formateur" 
+                      required>
+                    <label for="prenomInput">*Prénom</label>
+                    @if(AddTrainerForm.controls['prenom'].touched && AddTrainerForm.controls['prenom'].invalid){
+                        <span class="error">Ce champ est obligatoire</span>
+                      }
+                  </div>
+  
+                  <!-- Email -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="email" 
+                      id="emailInput" 
+                      formControlName="email" 
+                      class="form-control" 
+                      placeholder="Email du formateur" 
+                      required>
+                    <label for="emailInput">*Email</label>
+                    @if(AddTrainerForm.controls['email'].touched && AddTrainerForm.controls['email'].invalid){
+                        <span class="error">Ce champ est obligatoire</span>
+                      }
+                  </div>
+  
+                  <!-- Téléphone -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="tel" 
+                      id="telephoneInput" 
+                      formControlName="telephone" 
+                      class="form-control" 
+                      placeholder="Téléphone du formateur" 
+                      required>
+                    <label for="telephoneInput">*Téléphone</label>
+                    @if(AddTrainerForm.controls['telephone'].touched && AddTrainerForm.controls['telephone'].invalid){
+                        <span class="error">Ce champ est obligatoire</span>
+                      }
+                  </div>
+  
+                  <!-- CIN -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="text" 
+                      id="cinInput" 
+                      formControlName="cin" 
+                      class="form-control" 
+                      placeholder="CIN du formateur" 
+                      required>
+                    <label for="cinInput">*CIN</label>
+                    @if(AddTrainerForm.controls['cin'].touched && AddTrainerForm.controls['cin'].invalid){
+                        <span class="error">Ce champ est obligatoire</span>
+                      }
+                  </div>
+  
+                  <!-- Photo -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="text" 
+                      id="photoInput" 
+                      formControlName="photo" 
+                      class="form-control" 
+                      placeholder="URL de la photo" 
+                      required>
+                    <label for="photoInput">*Photo (URL)</label>
+                    @if(AddTrainerForm.controls['photo'].touched && AddTrainerForm.controls['photo'].invalid){
+                        <span class="error">Ce champ est obligatoire</span>
+                      }
+                  </div>
+  
+                  <!-- CV -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="text" 
+                      id="cvInput" 
+                      formControlName="cv" 
+                      class="form-control" 
+                      placeholder="URL du CV" 
+                      required>
+                    <label for="cvInput">*CV (URL)</label>
+                    @if(AddTrainerForm.controls['cv'].touched && AddTrainerForm.controls['cv'].invalid){
+                        <span class="error">Ce champ est obligatoire</span>
+                      }
+                  </div>
+  
+                  <!-- Specialités -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="text" 
+                      id="specialitesInput" 
+                      formControlName="specialites" 
+                      class="form-control" 
+                      placeholder="Specialités (séparées par des virgules)" 
+                      required>
+                    <label for="specialitesInput">*Specialités (séparées par des virgules)</label>
+                    @if(AddTrainerForm.controls['specialites'].touched && AddTrainerForm.controls['specialites'].invalid){
+                        <span class="error">Ce champ est obligatoire</span>
+                      }
+                  </div>
+  
+                  <!-- Error Message -->
+                  @if(errorMessage){ 
+                  <div class="alert alert-danger mt-3">
+                    {{ errorMessage }}
+                  </div>
+                }
+  
+                  <!-- Submit Button -->
+                  <div class="d-grid mb-4">
+                    <button type="submit" class="btn btn-primary btn-lg" [disabled]="AddTrainerForm.invalid">
+                      Ajouter
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

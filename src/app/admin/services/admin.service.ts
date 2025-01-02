@@ -14,11 +14,18 @@ export class AdminService {
 
   constructor(private http: HttpClient) {}
 
+  StringToArray(input: string): string[] {
+    return input.split(',').map(item => item.trim());
+  }
+
   getCandidats(): Observable<Candidate[]> {
     return this.http.get<Candidate[]>(`${this.baseURL}/candidats`);
   }
   getCandidatById(id : string):Observable<Candidate>{
     return this.http.get<Candidate>(`${this.baseURL}/candidats/${id}`);
+  }
+  getTrainerById(id : string):Observable<Trainer>{
+    return this.http.get<Trainer>(`${this.baseURL}/formateurs/${id}`);
   }
 
   updateCandidate(id: string, candidate: Candidate): Observable<Candidate> {
@@ -61,6 +68,8 @@ export class AdminService {
   addTrainer(trainerData: Trainer): Observable<any> {
     return this.http.post( `${this.baseURL}/formateurs`, trainerData);
   }
-  
+  getTrainerByEmail(email: string): Observable<Trainer[]> {
+    return this.http.get<Trainer[]>(`${this.baseURL}/formateurs?email=${email}`);
+  }
 
 }

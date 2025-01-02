@@ -29,16 +29,12 @@ export class AddTrainingsComponent{
       tags: ['']
     });
   }
-  // convertir une chaine séparée par des , en tab
-  private StringToArray(input: string): string[] {
-    return input.split(',').map(item => item.trim());  
-  }
 
   onSubmit(): void {
     const trainingData = this.AddTrainingForm.value;
 
-    trainingData.categories = this.StringToArray(trainingData.categories);
-    trainingData.tags = this.StringToArray(trainingData.tags);
+    trainingData.categories = this.adminService.StringToArray(trainingData.categories);
+    trainingData.tags = this.adminService.StringToArray(trainingData.tags);
     
     this.adminService.getTrainingByTitre(trainingData.titre).subscribe({
       next: (existingTrainings) => {
