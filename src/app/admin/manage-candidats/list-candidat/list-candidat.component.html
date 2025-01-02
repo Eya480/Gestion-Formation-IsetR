@@ -32,7 +32,7 @@
           <td>
             <img [src]="candidat.photo" alt="Photo" width="50" class="rounded-circle">
           </td>
-          <td>{{ candidat.cin }}</td>
+          <td><span class="badge bg-primary text-white me-1">{{ candidat.cin }}</span></td>
           <td class="text-center">
             <a class="btn btn-outline-primary btn-sm ms-2" [routerLink]="['../','editCandidat', candidat.id]">
               <i class="bi bi-pencil-square"></i> Éditer

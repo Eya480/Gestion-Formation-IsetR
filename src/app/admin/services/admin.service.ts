@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { forkJoin, map, Observable } from 'rxjs';
 import { Candidate } from '../../models/candidate';
 import { Session } from '../../models/session';
 import { Trainings } from '../../models/trainings';
@@ -71,5 +71,21 @@ export class AdminService {
   getTrainerByEmail(email: string): Observable<Trainer[]> {
     return this.http.get<Trainer[]>(`${this.baseURL}/formateurs?email=${email}`);
   }
-
+  //session
+  deleteSession(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.baseURL}/sessions/${id}`);
+  }
+  addSession(sessionData: Session): Observable<any> {
+    return this.http.post( `${this.baseURL}/sessions`, sessionData);
+  }
+  getCandidatsByIds(candidatIds: string[]): Observable<any[]>{
+    const candidatRequests = candidatIds.map(id => {
+      const url = `${this.baseURL}/candidats?id=${id}`;
+      return this.http.get<any>(url); 
+    });
+  
+    // Use forkJoin to wait for all the requests to complete
+    return forkJoin(candidatRequests);
+  }
+  
 }

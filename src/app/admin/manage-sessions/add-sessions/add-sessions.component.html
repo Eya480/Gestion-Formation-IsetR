@@ -1,1 +1,144 @@
-<p>add-sessions works!</p>
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card shadow-lg" style="border-radius: 1rem; backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.8);">
+          <div class="row g-0">
+            <!-- Image Section -->
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="../../../../assets/isett.jpg" 
+                   alt="Formulaire d'ajout de session" 
+                   class="img-fluid" 
+                   style="border-radius: 1rem 0 0 1rem; object-fit: cover; height: 100%; filter: blur(1px) brightness(0.7) contrast(1.2) saturate(2);" />
+            </div>
+            
+            <!-- Form Section -->
+            <div class="col-md-7">
+              <div class="card-body p-5 d-flex flex-column justify-content-center">
+                <h2 class="text-center fw-bold mb-4">Ajouter une Session</h2>
+                
+                <form [formGroup]="AddSessionForm" (ngSubmit)="onSubmit()">
+                    <div class="form-floating mb-3">
+                        <select 
+                          id="formationIdInput" 
+                          formControlName="formationId" 
+                          class="form-select" 
+                          required>
+                          @for(formation of formations;track formation){
+                          <option [value]="formation.id">
+                            {{ formation.titre }}
+                          </option>
+                        }
+                        </select>
+                        <label for="formationIdInput">*Formation</label>
+                      </div>
+                      
+  
+                      <div class="form-floating mb-3 border p-3 rounded">
+                        <p>*Formateurs</p>
+                        <div class="form-check">
+                            @for (formateur of formateurs;track formateur){
+                        <div class="form-check">
+                              <input 
+                                class="form-check-input border border-primary" 
+                                type="checkbox" 
+                                [value]="formateur.id"
+                                (change)="onFormateurChange($event)"
+                                [checked]="selectedFormateurs.includes(formateur.id)"
+                               >
+                              <label class="form-check-label">
+                                {{ formateur.nom }} {{ formateur.prenom }}
+                              </label>
+                            </div>
+                        }
+                        </div>
+                    
+                      </div>                      
+                  
+  
+                  <!-- Date de début -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="date" 
+                      id="dateDebutInput" 
+                      formControlName="dateDebut" 
+                      class="form-control" 
+                      placeholder="Date de début" 
+                      required>
+                    <label for="dateDebutInput">*Date de Début</label>
+                    @if(AddSessionForm.controls['dateDebut'].touched && AddSessionForm.controls['dateDebut'].invalid){
+                        <span class="error">Ce champ est obligatoire!</span>
+                    }
+                  </div>
+  
+                  <!-- Date de fin -->
+                  <div class="form-floating mb-3">
+                    <input 
+                      type="date" 
+                      id="dateFinInput" 
+                      formControlName="dateFin" 
+                      class="form-control" 
+                      placeholder="Date de fin" 
+                      required>
+                    <label for="dateFinInput">*Date de Fin</label>
+                    @if(AddSessionForm.controls['dateFin'].touched && AddSessionForm.controls['dateFin'].invalid){
+                        <span class="error">Ce champ est obligatoire!</span>
+                    }
+                  </div>
+  
+                  <!-- Description -->
+                  <div class="form-floating mb-3">
+                    <textarea 
+                      id="descriptionInput" 
+                      formControlName="description" 
+                      class="form-control" 
+                      placeholder="Description de la session" 
+                      rows="3" 
+                      required></textarea>
+                    <label for="descriptionInput">*Description</label>
+                    @if(AddSessionForm.controls['description'].touched && AddSessionForm.controls['description'].invalid){
+                        <span class="error">Ce champ est obligatoire!</span>
+                    }
+                  </div>
+  <!--candidat list-->
+                  <div class="form-floating mb-3 border p-3 rounded">
+                    <p>Candidats Inscrits</p>
+                    <div class="form-check">
+                        @for (candidat of candidats;track candidat){
+                    <div class="form-check">
+                          <input 
+                            class="form-check-input border border-primary" 
+                            type="checkbox" 
+                            [value]="candidat.id"
+                            (change)="onCandidatChange($event)"
+                            [checked]="selectedCandidats.includes(candidat.id)">
+                          <label class="form-check-label">
+                            {{ candidat.nom }} {{ candidat.prenom }}
+                          </label>
+                        </div>
+                    }
+                    </div>
+                
+                  </div>      
+                  
+  
+                  <!-- Error Message -->
+                   @if(errorMessage){
+                  <div class="alert alert-danger mt-3">
+                    {{ errorMessage }}
+                  </div>}
+  
+                  <!-- Submit Button -->
+                  <div class="d-grid mb-4">
+                    <button type="submit" class="btn btn-primary btn-lg" [disabled]="AddSessionForm.invalid">
+                      Ajouter
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

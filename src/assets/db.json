@@ -363,21 +363,6 @@
         "cloud",
         "backend"
       ]
-    },
-    {
-      "id": "c264",
-      "titre": "Formation Angularqq",
-      "description": "qqqqqqqqqqqqq",
-      "chargeHoraire": 22,
-      "niveau": "Intermédiaire",
-      "programme": "path/to/programme-angular.pdf",
-      "categories": [
-        "web"
-      ],
-      "tags": [
-        "pc",
-        "web"
-      ]
     }
   ],
   "sessions": [
@@ -534,6 +519,36 @@
       "dateFin": "2025-06-15T17:00:00",
       "description": "Session sur le Cloud Computing et AWS",
       "candidatsInscrits": []
+    },
+    {
+      "id": "c1bc",
+      "formationId": "4",
+      "formateurIds": [
+        "1",
+        "2"
+      ],
+      "dateDebut": "2025-01-17",
+      "dateFin": "2025-01-31",
+      "description": "lllllllllllllllll",
+      "candidatsInscrits": []
+    },
+    {
+      "id": "9904",
+      "formationId": "4",
+      "formateurIds": [
+        "1",
+        "2"
+      ],
+      "dateDebut": "2025-01-09",
+      "dateFin": "2025-01-31",
+      "description": "ssssssssssssss",
+      "candidatsInscrits": [
+        "3",
+        "4",
+        "5",
+        "7",
+        "8"
+      ]
     }
   ]
 }

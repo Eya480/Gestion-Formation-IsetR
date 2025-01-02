@@ -11,6 +11,8 @@ import { EditTrainersComponent } from './manage-trainers/edit-trainers/edit-trai
 import { AddTrainingsComponent } from './manage-trainings/add-trainings/add-trainings.component';
 import { EditTrainingsComponent } from './manage-trainings/edit-trainings/edit-trainings.component';
 import { ListTrainingsComponent } from './manage-trainings/list-trainings/list-trainings.component';
+import { AddSessionsComponent } from './manage-sessions/add-sessions/add-sessions.component';
+import { EditSessionsComponent } from './manage-sessions/edit-sessions/edit-sessions.component';
 
 const routes: Routes = [
   { path: 'dashboard' , component: DashboardComponent},
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'editTraining/:id', component: EditTrainingsComponent},
   //session
   { path: 'sessions', component: ListSessionsComponent },
+  { path: 'addSession', component: AddSessionsComponent },
+  { path: 'editSession/:id', component: EditSessionsComponent},
   //trainers
   { path: 'trainers', component: ListTrainersComponent },
   { path: 'addTrainer', component: AddTrainersComponent },

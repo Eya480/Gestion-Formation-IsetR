@@ -37,10 +37,7 @@ export class TrainingDetailsComponent implements OnInit {
               //console.log(formateurIds);
               if (formateurIds && formateurIds.length > 0) {
                 this.sharedService.getFormateursByIds(formateurIds).subscribe((formateursData) => {
-                  //console.log(formateursData);
-                  // Ajouter les formateurs à la session correspondante
                   session.formateurs = formateursData;
-                  //console.log(`Formateurs pour la session ${session.id}:`, session.formateurs);
                 });
               } else {
                 // Si aucune ID de formateur n'est trouvée pour cette session

@@ -30,7 +30,7 @@
             <th scope="row" class="text-center">{{ formation.id }}</th>
             <td>{{ formation.titre }}</td>
             <td class="d-none d-lg-table-cell" style="white-space: normal;">{{ formation.description }}</td>
-            <td>{{ formation.chargeHoraire }}H</td>
+            <td><span class="badge bg-secondary text-white me-1">{{ formation.chargeHoraire }}H</span></td>
             <td>
               {{ formation.niveau }}
             </td>
@@ -49,12 +49,12 @@
               <span class="badge bg-dark text-light me-1">{{ tag }}</span>
               }
             </td>
-            <td class="text-center">
-              <a class="btn btn-outline-primary btn-sm ms-2" [routerLink]="['../editTraining', formation.id]">
-                <i class="bi bi-pencil-square"></i> Éditer
+            <td class="text-center" style="width: 155px;">
+              <a class="btn btn-outline-primary btn-sm p-0 px-1 me-1" [routerLink]="['../editTraining', formation.id]">
+               Éditer
               </a>
-              <button class="btn btn-outline-danger btn-sm ms-2" (click)="deleteFormation(formation.id)" title="Supprimer">
-                <i class="bi bi-trash"></i> Supprimer
+              <button class="btn btn-outline-danger btn-sm p-0 px-1 me-1" (click)="deleteFormation(formation.id)" title="Supprimer">
+                Supprimer
               </button>
             </td>
           </tr>

@@ -1,1 +1,68 @@
-<p>list-sessions works!</p>
+<div class="container mt-5" style="max-width: 100%; width: 95%;">
+  <!-- Header Section -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-secondary fw-bold">Liste des Sessions</h2>
+    <a class="btn btn-primary shadow-sm d-flex align-items-center" routerLink="../addSession">
+      <i class="bi bi-plus-circle-fill me-2"></i> Ajouter une session
+    </a>
+  </div>
+
+  <!-- Table Section -->
+  <div class="table-responsive rounded shadow-sm">
+    <table class="table table-striped table-hover align-middle" style="min-width: 1200px;">
+      <thead class="table-dark">
+        <tr >
+          <th scope="col" class="text-center">#</th>
+          <th scope="col">Formation</th>
+          <th scope="col">Formateurs</th>
+          <th scope="col">Date Début</th>
+          <th scope="col">Date Fin</th>
+          <th scope="col">Description</th>
+          <th scope="col">Candidats Inscrits </th>
+          <th scope="col" class="text-center">NB<i class="bi bi-person-fill me-1"></i></th>
+          <th scope="col" class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Loop over sessions -->
+        @for(session of sessions;track session){
+        <tr>
+          <th scope="row" class="text-center">{{ session.id }}</th>
+          <td>{{ session.formation?.titre || 'Non spécifié' }}</td>
+          <td>
+            @for(formateurs of session.formateurs;track formateurs){
+              @for(formateur of formateurs;track formateur){
+            <span class="badge bg-primary text-white me-1">
+              {{ formateur.nom }} {{formateur.prenom}}
+            </span>
+          }}
+          </td>
+          <td>{{ session.dateDebut }}</td>
+          <td>{{ session.dateFin }}</td>
+          <td>{{ session.description }}</td>
+          <td>
+            @for(candidats of session.candidats;track candidats){
+              @for(candidat of candidats;track candidat){
+            <span class="badge bg-secondary text-white me-1">
+              {{ candidat.nom}} {{candidat.prenom}}
+            </span>
+          }}
+          </td>
+          <td><span class="badge bg-danger text-white me-1">
+            {{session.candidatsInscrits.length}}</span>
+          </td>
+          <td class="text-center" style="width: 150px;">
+            <a class="btn btn-outline-primary btn-sm p-0 px-1 me-1" [routerLink]="['../editSession', session.id]">
+              Éditer
+            </a>
+            <button class="btn btn-outline-danger btn-sm p-0 px-1 me-1" (click)="deleteSession(session.id)">
+             Supprimer
+            </button>
+          </td>
+          
+        </tr>
+      }
+      </tbody>
+    </table>
+  </div>
+</div>
