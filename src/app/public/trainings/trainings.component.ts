@@ -1,77 +1,50 @@
-import {Component,OnInit,signal,WritableSignal//trainingsArr est automatiquement mise à jour,
-} from '@angular/core';
-import { Trainings } from '../../shared/models/trainings';
+import { Component, OnInit, WritableSignal, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { map,startWith } from 'rxjs';
-import { RouterModule } from '@angular/router'; 
+import { map } from 'rxjs';
 import { SharedServiceService } from '../../shared/shared-service.service';
+import { Trainings } from '../../shared/models/trainings';
+import { RouterModule } from '@angular/router';
+//pour suivre les changements de données=>signal
 
 @Component({
   selector: 'app-trainings',
   standalone: true,
   imports: [ReactiveFormsModule,RouterModule],
   templateUrl: './trainings.component.html',
-  styleUrl: './trainings.component.css',
+  styleUrls: ['./trainings.component.css']
 })
 export class TrainingsComponent implements OnInit {
-  trainingsArr: WritableSignal<Trainings[]> = signal([]);
-  originalTrainingArr: Trainings[] = [];//les formations
-  trainingsForm!: FormGroup;
+  trainingsArr: WritableSignal<Trainings[]> = signal([]); // Liste filtrée //signal
+  //Les modifications de ce signal mettent automatiquement à jour le DOM.
+  originalTrainingArr: Trainings[] = []; // Liste originale
+  trainingsForm: FormGroup;
 
-  constructor(private sharedService: SharedServiceService,private fb: FormBuilder) {
+  constructor(private sharedService: SharedServiceService, private fb: FormBuilder) {
     this.trainingsForm = this.fb.group({
-    searchInput: [''],
+      searchInput: ['']
     });
   }
 
   ngOnInit(): void {
-    this.sharedService.getFormations().subscribe({
-      next: (trainings: Trainings[]) => {
-        //console.log(trainings);
-        this.originalTrainingArr = trainings;
-      },
-      error: (error) => {
-        console.error(error);
-      },
-      complete: () => {
-        console.log('Completed');
-        //La méthode onSearchInputChanges capte chaque modification tsir f zone de recherche en temps réel.
-        this.onSearchInputChanges();
-        this.trainingsArr.set(this.originalTrainingArr);
-      },
+    // Récupérer les formations depuis le service
+    this.sharedService.getFormations().subscribe((trainings: Trainings[]) => {
+      this.originalTrainingArr = trainings;
+      this.trainingsArr.set(this.originalTrainingArr);// Initialiser le signal
     });
-  }
 
-  onSearchInputChanges() {
-    //console.log(this.trainingsForm);
-    this.trainingsForm.controls['searchInput'].valueChanges//émissions des valeurs du champ de recherche
+    // Écouter les changements dans le champ de recherche
+    this.trainingsForm.controls['searchInput'].valueChanges
       .pipe(
-        startWith(''),
-        map((filterValue: string) => {
-          // Check if the filterValue is non-empty
-          const cleansedFilterValue = filterValue.trim().toLowerCase();
-          if (cleansedFilterValue.length > 0) {
-            // Filter the trainings array based on tags
-            //La liste des formations est filtrée pour ne conserver que celles dont les tags contiennent le texte saisi.
-            return this.trainingsArr().filter((training) =>
-              training.tags.some((tag)=> tag.toLowerCase().includes(cleansedFilterValue))
-            );
-          }
-          // If filterValue is empty, return the original array
-          return this.originalTrainingArr;
-        })
+        map((value: string) => value.trim().toLowerCase()), // Nettoyer la saisie
+        map((search) => 
+          search
+            ? this.originalTrainingArr.filter((training) =>
+                training.tags.some((tag) => tag.toLowerCase().includes(search))
+              )
+            : this.originalTrainingArr// Renvoyer la liste complète si la recherche est vide
+        )
       )
-      .subscribe({//resultat obtenu , ye tkoun tab filtre ye tkoun erreur
-        next: (filteredArr: Trainings[]) => {
-          // Update the signal or directly update the array
-          this.trainingsArr.set(filteredArr);
-        },
-        error: (error) => {
-          console.error('Error occurred during filtering:', error);
-        },
-        complete: () => {
-          console.log('Filtering completed');
-        },
-      });
+      .subscribe((filtered) => this.trainingsArr.set(filtered)); // Mettre à jour la liste filtrée
+      //Utilisation de la méthode set sur le signal pour mettre à jour directement la liste filtrée.
   }
 }

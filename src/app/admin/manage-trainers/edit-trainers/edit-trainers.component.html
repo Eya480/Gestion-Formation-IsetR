@@ -154,7 +154,7 @@
               <ul class="list-group">
               <li *ngFor="let specialite of trainer.specialites; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
             {{ specialite }}
-                <button (click)="removeSpecialite(i)" class="btn btn-danger btn-sm">
+                <button type="button" (click)="removeSpecialite(i)" class="btn btn-danger btn-sm">
                  Supprimer
                   </button>
                  </li>
@@ -163,7 +163,7 @@
   
                 <!-- Ajouter une spécialité -->
                 <div class="mb-4">
-                <button (click)="addSpecialite($event)" class="btn btn-outline-primary">
+                <button  type="button" (click)="addSpecialite()" class="btn btn-outline-primary">
                              Ajouter une spécialité
                 </button>
               </div>

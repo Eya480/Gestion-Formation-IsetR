@@ -20,7 +20,6 @@ export class EditTrainersComponent implements OnInit {
   constructor(
     private activeRoute: ActivatedRoute,
     private adminService: AdminService,
-    private sharedSer: SharedServiceService,
     private router: Router
   ) {}
   
@@ -56,8 +55,7 @@ export class EditTrainersComponent implements OnInit {
 
   //************************************* */
   // Fonction pour ajouter une spécialité
-  addSpecialite(event: Event) {
-    event.preventDefault(); // Empêche le comportement par défaut (par exemple, une redirection ou un rechargement)
+  addSpecialite() {
     const newSpecialite = prompt("Entrez la spécialité à ajouter:");
   
     if (newSpecialite && newSpecialite.trim() !== "") {
