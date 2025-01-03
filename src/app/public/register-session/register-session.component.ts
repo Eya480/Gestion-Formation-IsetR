@@ -67,7 +67,7 @@ export class RegisterSessionComponent implements OnInit {
             return;
           }
 
-          const candidateId: string = candidate.id; // Maintenant sûr d'assigner
+          const candidateId: string = candidate.id;
 
           // Si le candidat est déjà inscrit, afficher une erreur
           if (this.session.candidatsInscrits.includes(candidateId)) {

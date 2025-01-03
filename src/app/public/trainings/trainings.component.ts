@@ -4,7 +4,6 @@ import { map } from 'rxjs';
 import { SharedServiceService } from '../../shared/shared-service.service';
 import { Trainings } from '../../shared/models/trainings';
 import { RouterModule } from '@angular/router';
-//pour suivre les changements de données=>signal
 
 @Component({
   selector: 'app-trainings',
@@ -14,9 +13,8 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./trainings.component.css']
 })
 export class TrainingsComponent implements OnInit {
-  trainingsArr: WritableSignal<Trainings[]> = signal([]); // Liste filtrée //signal
-  //Les modifications de ce signal mettent automatiquement à jour le DOM.
-  originalTrainingArr: Trainings[] = []; // Liste originale
+  trainingsArr: WritableSignal<Trainings[]> = signal([]); 
+  originalTrainingArr: Trainings[] = [];
   trainingsForm: FormGroup;
 
   constructor(private sharedService: SharedServiceService, private fb: FormBuilder) {
@@ -44,7 +42,6 @@ export class TrainingsComponent implements OnInit {
             : this.originalTrainingArr// Renvoyer la liste complète si la recherche est vide
         )
       )
-      .subscribe((filtered) => this.trainingsArr.set(filtered)); // Mettre à jour la liste filtrée
-      //Utilisation de la méthode set sur le signal pour mettre à jour directement la liste filtrée.
+      .subscribe((filtered) => this.trainingsArr.set(filtered)); 
   }
 }
