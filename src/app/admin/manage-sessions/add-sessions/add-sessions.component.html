@@ -5,10 +5,10 @@
           <div class="row g-0">
             <!-- Image Section -->
             <div class="col-md-6 col-lg-5 d-none d-md-block">
-              <img src="../../../../assets/isett.jpg" 
-                   alt="Formulaire d'ajout de session" 
-                   class="img-fluid" 
-                   style="border-radius: 1rem 0 0 1rem; object-fit: cover; height: 100%; filter: blur(1px) brightness(0.7) contrast(1.2) saturate(2);" />
+                <img src="../../../../assets/Blog-articles-headers.png"
+                    alt="Formulaire d'inscription" 
+                    class="img-fluid" 
+                    style="border-radius: 1rem 0 0 1rem; object-fit: cover; height: 100%;filter:brightness(1) contrast(1) saturate(3);" />
             </div>
             
             <!-- Form Section -->
@@ -58,7 +58,7 @@
                   <!-- Date de début -->
                   <div class="form-floating mb-3">
                     <input 
-                      type="date" 
+                      type="datetime-local" 
                       id="dateDebutInput" 
                       formControlName="dateDebut" 
                       class="form-control" 
@@ -73,7 +73,7 @@
                   <!-- Date de fin -->
                   <div class="form-floating mb-3">
                     <input 
-                      type="date" 
+                      type="datetime-local" 
                       id="dateFinInput" 
                       formControlName="dateFin" 
                       class="form-control" 
@@ -100,26 +100,26 @@
                     }
                   </div>
   <!--candidat list-->
-                  <div class="form-floating mb-3 border p-3 rounded">
-                    <p>Candidats Inscrits</p>
-                    <div class="form-check">
-                        @for (candidat of candidats;track candidat){
-                    <div class="form-check">
-                          <input 
-                            class="form-check-input border border-primary" 
-                            type="checkbox" 
-                            [value]="candidat.id"
-                            (change)="onCandidatChange($event)"
-                            [checked]="selectedCandidats.includes(candidat.id)">
-                          <label class="form-check-label">
-                            {{ candidat.nom }} {{ candidat.prenom }}
-                          </label>
-                        </div>
-                    }
-                    </div>
-                
-                  </div>      
-                  
+  <div class="form-floating mb-3 border p-3 rounded">
+    <p>Candidats Inscrits</p>
+    <div class="form-check" style="max-height: 100px; overflow-y: auto;">
+  
+        @for(candidat of candidats;track candidat){
+        <div class="form-check">
+          <input 
+            class="form-check-input border border-primary" 
+            type="checkbox" 
+            [value]="candidat.id"
+            (change)="onCandidatChange($event)"
+            [checked]="selectedCandidats.includes(candidat.id)">
+          <label class="form-check-label">
+            {{ candidat.nom }} {{ candidat.prenom }}
+          </label>
+        </div>
+    }
+    </div>
+  </div>
+  
   
                   <!-- Error Message -->
                    @if(errorMessage){

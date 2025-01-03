@@ -33,12 +33,12 @@
             <td>{{ trainer.prenom }}</td>
             <td>{{ trainer.email }}</td>
             <td>{{ trainer.telephone }}</td>
-            <td>{{ trainer.cin }}</td>
+            <td><span class="badge bg-secondary text-white me-1">{{ trainer.cin }}</span></td>
             <td>
               <img [src]="trainer.photo" alt="Photo" width="50" class="rounded-circle">
             </td>
             <td>
-              <a href="{{ trainer.photo }}" target="_blank" class="btn btn-link text-primary p-0">
+              <a href="{{ trainer.cv }}" target="_blank" class="btn btn-link text-primary p-0">
                 <i class="bi bi-file-earmark-text"></i> Voir CV
               </a>
             </td>

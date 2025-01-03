@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { Trainings } from '../../models/trainings';
+import { Trainings } from '../../shared/models/trainings';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedServiceService } from '../../shared/shared-service.service';
 

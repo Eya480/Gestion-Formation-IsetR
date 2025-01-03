@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Trainings } from '../../../models/trainings';
+import { Trainings } from '../../../shared/models/trainings';
 import { AdminService } from '../../services/admin.service';
 import { SharedServiceService } from '../../../shared/shared-service.service';
 

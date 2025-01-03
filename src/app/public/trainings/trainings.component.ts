@@ -1,6 +1,6 @@
 import {Component,OnInit,signal,WritableSignal//trainingsArr est automatiquement mise à jour,
 } from '@angular/core';
-import { Trainings } from '../../models/trainings';
+import { Trainings } from '../../shared/models/trainings';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { map,startWith } from 'rxjs';
 import { RouterModule } from '@angular/router'; 

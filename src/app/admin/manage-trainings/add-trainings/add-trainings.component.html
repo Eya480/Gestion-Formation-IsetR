@@ -81,17 +81,16 @@
                   <!-- Programme -->
                   <div class="form-floating mb-3">
                     <input 
-                      type="text" 
+                      type="file" 
                       id="programmeInput" 
-                      required
                       formControlName="programme" 
-                      class="form-control" 
-                      placeholder="Lien du programme">
-                    <label for="programmeInput">*Programme (lien URL)</label>
-                    @if(AddTrainingForm.controls['programme'].touched && AddTrainingForm.controls['programme'].invalid){
-                      <span class="error">Lien invalide</span>
-                    }
-                  </div>
+                      (change)="onFileSelected($event)" 
+                      class="form-control"
+                      placeholder="programme"
+                      required
+                    />
+                    <label for="photoInput">*Programme</label>
+                  </div>  
   
                   <!-- Catégories -->
                   <div class="form-floating mb-3">

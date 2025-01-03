@@ -59,4 +59,22 @@ export class AddTrainingsComponent{
       }
     });
   }
+
+  /*************************** */
+onFileSelected(event: Event): void {
+  const fileInput = event.target as HTMLInputElement;
+
+  if (fileInput.files && fileInput.files[0]) {
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = () => {
+      this.AddTrainingForm.patchValue({
+        photo: reader.result // Convertir en Base64
+      });
+    };
+
+    reader.readAsDataURL(file);
+  }
+}
 }

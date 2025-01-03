@@ -11,9 +11,11 @@
           Charge horaire : {{ training.chargeHoraire }} heures
         </span>
       </p>
-
+       @if(sessions.length>0){
+        <div>
       <!-- Liste des sessions à venir -->
       <h3 class="mt-4 fw-bold">Sessions à venir</h3>
+     
 
       @for(session of sessions; track session;) {
         <div class="card mt-3 border-primary">
@@ -55,9 +57,15 @@
             </div>
         </div>
       }
+    
 
       <!-- Button to view the training program -->
       <a href="{{ training.programme }}" class="btn btn-outline-primary mt-3" target="_blank">Voir le programme de la formation</a>
     </div>
+  }@else{
+    <div class="alert alert-primary mt-3 fw-bold">
+      Aucune Session pour cette formation pour le moment
+    </div>
+  }
   </div>
 </div>

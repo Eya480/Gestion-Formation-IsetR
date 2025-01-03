@@ -3,7 +3,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from '../../services/admin.service';
 import { SharedServiceService } from '../../../shared/shared-service.service';
-import { Trainer } from '../../../models/trainer';
+import { Trainer } from '../../../shared/models/trainer';
 import { CommonModule } from '@angular/common';
 
 @Component({

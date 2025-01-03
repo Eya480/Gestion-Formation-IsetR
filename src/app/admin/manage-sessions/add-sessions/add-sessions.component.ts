@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from '../../services/admin.service';
-import { Trainer } from '../../../models/trainer';
-import { Trainings } from '../../../models/trainings';
-import { Candidate } from '../../../models/candidate';
+import { Trainer } from '../../../shared/models/trainer';
+import { Trainings } from '../../../shared/models/trainings';
+import { Candidate } from '../../../shared/models/candidate';
 import { SharedServiceService } from '../../../shared/shared-service.service';
 
 @Component({

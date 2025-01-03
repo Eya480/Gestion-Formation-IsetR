@@ -1,1 +1,155 @@
-<p>edit-sessions works!</p>
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card shadow-lg" style="border-radius: 1rem; backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.8);">
+          <div class="row g-0">
+            <!-- Image Section -->
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img
+                src="../../../../assets/Blog-articles-headers.png"
+                alt="Edit Session"
+                class="img-fluid"
+                style="border-radius: 1rem 0 0 1rem; object-fit: cover; height: 100%; filter: brightness(0.7) contrast(1.2) saturate(2);"
+              />
+            </div>
+  
+            <!-- Form Section -->
+            <div class="col-md-7">
+              <div class="card-body p-5 d-flex flex-column justify-content-center">
+                <h2 class="text-center fw-bold mb-4">Modifier :<br><u>{{ session.description}}</u></h2>
+  
+                <form id="EditSessionForm" (ngSubmit)="editSession(f)" #f="ngForm">
+                  <!-- Formation -->
+                  <div class="form-floating mb-3">
+                    <select
+                      name="formationId"
+                      id="formationIdInput"
+                      ngModel
+                      #formationId="ngModel"
+                      class="form-select"
+                      [(ngModel)]="session.formationId"
+                      required>
+                      @for(formation of formations;track formation){
+                      <option [value]="formation.id">{{ formation.titre }}</option>
+                      }
+                    </select>
+                    <label for="formationIdInput">*Formation</label>
+                    @if(formationId.touched && formationId.invalid) {
+                      <span class="text-danger">Ce champ est obligatoire.</span>
+                    }
+                  </div>
+  
+                  <!-- Formateurs -->
+                  <div class="form-floating mb-3 border p-3 rounded">
+                    <p>*Formateurs</p>
+                    @for(formateur of formateurs;track formateur){
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input border border-primary"
+                        [value]="formateur.id"
+                        (change)="onFormateurChange($event)"
+                        [checked]="session.formateurIds.includes(formateur.id)">
+                      <label class="form-check-label">
+                        {{ formateur.nom }} {{ formateur.prenom }}
+                      </label>
+                    </div>
+                }
+                  </div>
+  
+                  <!-- Date de début -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="datetime-local"
+                      name="dateDebut"
+                      id="dateDebutInput"
+                      ngModel
+                      #dateDebut="ngModel"
+                      class="form-control"
+                      placeholder="Date de début"
+                      [(ngModel)]="session.dateDebut"
+                      required />
+                    <label for="dateDebutInput">*Date de Début</label>
+                    @if(dateDebut.touched && dateDebut.invalid) {
+                      <span class="text-danger">Ce champ est obligatoire.</span>
+                    }
+                  </div>
+  
+                  <!-- Date de fin -->
+                  <div class="form-floating mb-3">
+                    <input
+                      type="datetime-local"
+                      name="dateFin"
+                      id="dateFinInput"
+                      ngModel
+                      #dateFin="ngModel"
+                      class="form-control"
+                      placeholder="Date de fin"
+                      [(ngModel)]="session.dateFin"
+                      required />
+                    <label for="dateFinInput">*Date de Fin</label>
+                    @if(dateFin.touched && dateFin.invalid) {
+                      <span class="text-danger">Ce champ est obligatoire.</span>
+                    }
+                  </div>
+  
+                  <!-- Description -->
+                  <div class="form-floating mb-3">
+                    <textarea
+                      name="description"
+                      id="descriptionInput"
+                      ngModel
+                      #description="ngModel"
+                      class="form-control"
+                      placeholder="Description"
+                      rows="3"
+                      [(ngModel)]="session.description"
+                      required></textarea>
+                    <label for="descriptionInput">*Description</label>
+                    @if(description.touched && description.invalid) {
+                      <span class="text-danger">Ce champ est obligatoire.</span>
+                    }
+                  </div>
+  
+                  <!-- Candidats Inscrits -->
+                  <div class="form-floating mb-3 border p-3 rounded">
+                    <p>Candidats Inscrits</p>
+                    <div class="form-check" style="max-height: 100px; overflow-y: auto;">
+                        @for(candidat of candidats;track candidat){
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input border border-primary"
+                          [value]="candidat.id"
+                          (change)="onCandidatChange($event)"
+                          [checked]="session.candidatsInscrits.includes(candidat.id)">
+                        <label class="form-check-label">
+                          {{ candidat.nom }} {{ candidat.prenom }}
+                        </label>
+                      </div>
+                    }
+                    </div>
+                  </div>
+  
+                  <!-- Error Message -->
+                  @if(errorMessage) {
+                    <div class="alert alert-danger mt-3">
+                      {{ errorMessage }}
+                    </div>
+                  }
+  
+                  <!-- Submit Button -->
+                  <div class="d-grid mb-4">
+                    <button type="submit" class="btn btn-primary btn-lg" [disabled]="f.invalid">
+                      Modifier
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -96,14 +96,16 @@
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input 
-                                          type="text" 
+                                          type="file" 
                                           id="photoInput" 
+                                          (change)="onFileSelected($event)" 
                                           class="form-control"
-                                          formControlName="photo"
-                                          placeholder="Votre photo" 
-                                         />
-                                         <label for="">Photo</label>
-                                      </div>
+                                          placeholder="Votre photo"
+                                          formControlName="photo" 
+                                          required
+                                        />
+                                        <label for="photoInput">Photo</label>
+                                      </div>                                      
                                     <!-- Error Message -->
                                     @if (errorMessage){
                                     <div class="alert alert-danger mt-3" [innerHTML]="errorMessage">

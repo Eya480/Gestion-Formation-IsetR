@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup,FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SharedServiceService } from '../../../shared/shared-service.service';
+import { AdminService } from '../../services/admin.service';
 
 @Component({
   selector: 'app-add-candidat',
@@ -17,7 +18,8 @@ export class AddCandidatComponent{
   constructor(
       private router: Router,
       private fb: FormBuilder,
-      private sharedService: SharedServiceService
+      private sharedService: SharedServiceService,
+      private adminS: AdminService
     ) {
       this.AddForm = this.fb.group({
         nom: [''],
@@ -28,6 +30,7 @@ export class AddCandidatComponent{
         photo: ['']
       });
     }
+
 
     onSubmit(): void {
 
@@ -58,5 +61,21 @@ export class AddCandidatComponent{
         }
       )
     }
+  /*************************** */
+  onFileSelected(event: Event): void {
+      const fileInput = event.target as HTMLInputElement;
   
+      if (fileInput.files && fileInput.files[0]) {
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+  
+        reader.onload = () => {
+          this.AddForm.patchValue({
+            photo: reader.result // Convertir en Base64
+          });
+        };
+  
+        reader.readAsDataURL(file);
+      }
+    }
 }

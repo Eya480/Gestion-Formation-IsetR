@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
-import { Candidate } from '../../../models/candidate';
+import { Candidate } from '../../../shared/models/candidate';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from '../../services/admin.service';
 

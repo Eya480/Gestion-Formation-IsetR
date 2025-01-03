@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Session } from '../../models/session';
+import { Session } from '../../shared/models/session';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SharedServiceService } from '../../shared/shared-service.service';
 

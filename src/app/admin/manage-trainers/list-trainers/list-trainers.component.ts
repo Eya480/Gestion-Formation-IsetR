@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Trainer } from '../../../models/trainer';
+import { Trainer } from '../../../shared/models/trainer';
 import { SharedServiceService } from '../../../shared/shared-service.service';
 import { AdminModule } from '../../admin.module';
 import { AdminService } from '../../services/admin.service';

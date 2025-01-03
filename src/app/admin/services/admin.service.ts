@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { forkJoin, map, Observable } from 'rxjs';
-import { Candidate } from '../../models/candidate';
-import { Session } from '../../models/session';
-import { Trainings } from '../../models/trainings';
-import { Trainer } from '../../models/trainer';
+import { Candidate } from '../../shared/models/candidate';
+import { Session } from '../../shared/models/session';
+import { Trainings } from '../../shared/models/trainings';
+import { Trainer } from '../../shared/models/trainer';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,7 @@ export class AdminService {
   StringToArray(input: string): string[] {
     return input.split(',').map(item => item.trim());
   }
+  
 
   getCandidats(): Observable<Candidate[]> {
     return this.http.get<Candidate[]>(`${this.baseURL}/candidats`);
@@ -72,6 +73,10 @@ export class AdminService {
     return this.http.get<Trainer[]>(`${this.baseURL}/formateurs?email=${email}`);
   }
   //session
+  updateSession(id: string, f: Session): Observable<Session> {
+    return this.http.put<Session>(`${this.baseURL}/sessions/${id}`, f);
+  }
+
   deleteSession(id: string): Observable<void> {
     return this.http.delete<void>(`${this.baseURL}/sessions/${id}`);
   }
@@ -81,7 +86,7 @@ export class AdminService {
   getCandidatsByIds(candidatIds: string[]): Observable<any[]>{
     const candidatRequests = candidatIds.map(id => {
       const url = `${this.baseURL}/candidats?id=${id}`;
-      return this.http.get<any>(url); 
+      return this.http.get<any[]>(url); 
     });
   
     // Use forkJoin to wait for all the requests to complete

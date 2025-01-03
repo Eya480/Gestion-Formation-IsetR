@@ -41,12 +41,17 @@
           <td>{{ session.dateFin }}</td>
           <td>{{ session.description }}</td>
           <td>
+            @if(session.candidats.length>0){
             @for(candidats of session.candidats;track candidats){
               @for(candidat of candidats;track candidat){
             <span class="badge bg-secondary text-white me-1">
               {{ candidat.nom}} {{candidat.prenom}}
             </span>
-          }}
+          }}}@else{
+            <div class="alert alert-primary mt-3 fw-bold">
+              aucun candidat pour le moment
+            </div>
+          }
           </td>
           <td><span class="badge bg-danger text-white me-1">
             {{session.candidatsInscrits.length}}</span>

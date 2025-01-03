@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../services/admin.service';
 import { RouterModule } from '@angular/router';
-import { Trainings } from '../../../models/trainings';
+import { Trainings } from '../../../shared/models/trainings';
 import { SharedServiceService } from '../../../shared/shared-service.service';
 
 @Component({

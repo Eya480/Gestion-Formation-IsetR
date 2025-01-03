@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Candidate } from '../../../models/candidate';
+import { Candidate } from '../../../shared/models/candidate';
 import { AdminService } from '../../services/admin.service';
 import { RouterModule } from '@angular/router';
 

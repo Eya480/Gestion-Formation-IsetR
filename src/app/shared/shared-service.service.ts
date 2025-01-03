@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { forkJoin, map, Observable } from 'rxjs';
-import { Trainings } from '../models/trainings';
-import { Candidate } from '../models/candidate';
-import { Session } from '../models/session';
+import { Trainings } from './models/trainings';
+import { Candidate } from './models/candidate';
+import { Session } from './models/session';
 
 @Injectable({
   providedIn: 'root',

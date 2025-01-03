@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Session } from '../../../models/session';
+import { Session } from '../../../shared/models/session';
 import { AdminService } from '../../services/admin.service';
 import { SharedServiceService } from '../../../shared/shared-service.service';
 import { RouterModule } from '@angular/router';

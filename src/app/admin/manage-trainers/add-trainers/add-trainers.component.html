@@ -95,32 +95,30 @@
                   <!-- Photo -->
                   <div class="form-floating mb-3">
                     <input 
-                      type="text" 
-                      id="photoInput" 
+                      type="file" 
+                      id="PhotoInput" 
                       formControlName="photo" 
-                      class="form-control" 
-                      placeholder="URL de la photo" 
-                      required>
-                    <label for="photoInput">*Photo (URL)</label>
-                    @if(AddTrainerForm.controls['photo'].touched && AddTrainerForm.controls['photo'].invalid){
-                        <span class="error">Ce champ est obligatoire</span>
-                      }
-                  </div>
+                      (change)="onFileSelected($event)" 
+                      class="form-control"
+                      placeholder="Votre photo"
+                      required
+                    />
+                    <label for="photoInput">*Photo</label>
+                  </div>  
   
                   <!-- CV -->
                   <div class="form-floating mb-3">
                     <input 
-                      type="text" 
+                      type="file" 
                       id="cvInput" 
                       formControlName="cv" 
-                      class="form-control" 
-                      placeholder="URL du CV" 
-                      required>
-                    <label for="cvInput">*CV (URL)</label>
-                    @if(AddTrainerForm.controls['cv'].touched && AddTrainerForm.controls['cv'].invalid){
-                        <span class="error">Ce champ est obligatoire</span>
-                      }
-                  </div>
+                      (change)="onFileSelected($event)" 
+                      class="form-control"
+                      placeholder="Votre CV"
+                      required
+                    />
+                    <label for="cvInput">*CV</label>
+                  </div>  
   
                   <!-- Specialités -->
                   <div class="form-floating mb-3">
